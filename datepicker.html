@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>datepicker</title>
+	<style type="text/css">
+     *{
+     	margin:0; 
+     	padding:0; 
+     	border:none;
+     }
+     body
+     {
+     	font-size: 12px/1.25 arial;
+     	color: #333;
+     }
+     #datepicker span
+     {
+     	display: inline-block;
+     	padding: 5px;
+     	border:1px solid #AAA;
+     	text-align: center;
+     	
+     }
+     #datepicker span.current
+     {
+     	color: white;
+     	background: red;
+     }
+	</style>
+</head>
+<body>
+	<script type="text/javascript">
+   //<![CDATA[
+   /***
+   datepicker idea
+	
+	date 
+		year month day hour miniute 
+
+	limit
+		min userOption
+		max today or uerOption
+	month
+	    max today or userOption
+	same to same
+	
+	timearea default current UserComputerTime
+	change 
+	
+	arguments
+		mintime maxtime holdPlacer timeArea
+
+	style
+		current mousedown disable	
+	click
+	 minDate <= userOptionTime <=minDate
+
+	 用户每一次mousedown都获取用户 userOptionTime
+		right time
+
+		 mindate < year < maxdate
+
+	
+   *****/
+   function datepicker(min,max,holder)
+   {
+   
+   	this.minDate = "1990-02-03 14:35";     //不存在则是今天
+   	this.maxDate = "2013-11-15 20:38";     //不存在则是 一年后 +365day
+   	this.seperator  = "-";  //不存在则是 "-";
+   	this.CTime   = null;    
+   
+   }
+   datepicker.prototype.getCTime = function()//获取当前time
+   {
+   	var today = new Date();
+   	return {
+	   			year     : today.getFullYear(),
+	   			month    : today.getMonth(),
+	   			day      : today.getDate(),
+	   			week     : today.getDay(),
+	   			hours    : today.getHours(),
+	   			minutes  : today.getMinutes(),
+	   			timestap : today.getTime()
+   		   }
+   }
+   datepicker.prototype.showTime = function()//输出当前time
+   {
+
+   }
+   datepicker.prototype.setNTime = function()//设置user time
+   {
+   		this.CTime = this.getCTime();
+   		var tmpArr = this.minDate.split(this.holder);
+   		var yearStr = "";
+   		for(var i=tmpArr[0];i<=this.CTime.year;i++)
+   		{
+   			if(i == this.CTime.year)
+   			{
+   				yearStr+='<span class="current">' + i + '</span>';
+   				continue;
+   			}
+   			yearStr+='<span>' + i + '</span>';
+   		}
+   		var div = document.createElement('div');
+   		div.setAttribute("id","datepicker");
+   		div.innerHTML = yearStr;
+   		document.body.appendChild(div);
+   		console.log(yearStr);
+   		// console.log(this.CTime);
+   }
+   var time = new datepicker("1990-10-01",null,"-");
+   time.setNTime();
+   //]]>
+	</script>
+</body>
+</html>

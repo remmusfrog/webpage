@@ -1,0 +1,262 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>connect facebook</title>
+	<link rel="stylesheet" type="text/css" href="./css/reset.css" media="all">
+	<!-- <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato" media="all"> -->
+	<link rel="stylesheet" type="text/css" href="./css/ui_common.css" media="all">
+	<link rel="stylesheet" type="text/css" href="./css/common.css" media="all">
+	<link rel="stylesheet" type="text/css" href="./css/index.css" media="all">
+	<link rel="stylesheet" type="text/css" href="./css/index_icon.css" media="all">
+	<!--[if IE]> <link rel="stylesheet" type="text/css" href="./css/ie7.css" media="all"> <![endif]-->
+	<link rel="stylesheet" type="text/css" href="./css/add_edit_user.css" media="all">
+	<link rel="stylesheet" type="text/css" href="./css/connect.css" media="all">
+</head>
+<body>
+	<div class="main">
+		<div class="header">
+			<!-- login state -->
+			<div class="login-reg">
+				<a href="#">logout</a>
+				<a href="#">contact</a>
+			</div>
+			<div class="top">
+				<div class="container fn-clear">
+					<!-- logo image -->
+					<a href="#" class="logo"><img src="./images/logo.png" alt="logo" width="126" height="21"></a>
+					<!-- top navigation -->
+					<ul class="nav" id="header-nav">
+						<li class="on">
+							<a href="#" class="icon-home">home</a>
+						</li>
+						<li>
+							<a href="#" class="icon-publish">publish</a>
+						</li>
+						<li>
+							<a href="#" class="icon-connect">connections</a>
+						</li>
+						<li>
+							<a href="#" class="icon-pub-groups">pub groups</a>
+						</li>
+						<li>
+							<a href="#" class="icon-feeds">feeds</a>
+						</li>
+						<li>
+							<a href="#" class="set">settings</a>
+						</li>
+						<li class="last" id="back-office">
+							<a href="#" class="back-office">back office</a>
+						</li>
+					</ul>
+					<!-- search box -->
+					<div class="search"><div class="container"><input type="text" class="ui-input-text" /><a class="search-btn">search</a></div></div>
+					<!-- compose btn -->
+					<a href="#" class="compose" id="compose">compose</a>
+				</div>
+			</div>
+			<!-- notice center -->
+			<div class="notice-center fn-clear">
+					<span class="news">Richard van Hooijdonk | MarketingMonday</span>
+					<a href="#" class="mail"><em class="ui-icon-message-num">10</em></a>
+					<a href="#" class="message"></a>
+					<a href="#" class="refresh"></a>
+					<div class="ui-select ui-zIndex-30">
+						<input type="hidden" value="2" class="input-hidden" />
+						<div class="ui-select-head"><b class="val">group</b><span class="arrow">more</span></div>
+						<ul>
+							<li data-value="0">Apple Feeds</li>
+							<li data-value="1">Animal</li>
+							<li data-value="2">Babes &amp; Boobs</li>
+							<li data-value="3">Cars</li>
+						</ul>
+					</div>
+					<a href="#" class="btn">btn</a>
+			</div>
+		</div>
+		<!-- 主体内容区 -->
+		<div class="content-wrap">
+			<!-- 侧边导航 -->
+			<div id="menu">
+				<!-- home -->
+				<ul class="nav current fn-clear" id="nav-home">
+					<li class="on"><a href="#" class="icon-dashboard"><i class="icon">dashboard</i><span class="name">dashboard</span></a></li>
+					<li><a href="#" class="icon-rapportage"><i class="icon">rapportage</i><span class="name">rapportage</span></a></li>
+					<li><a href="#" class="icon-activiteiten"><i class="icon">activiteiten</i><span class="name">activiteiten</span></a></li>
+				</ul>
+				<!-- publish -->
+				<ul class="nav fn-clear">
+					<li class="on"><a href="#" class="icon-pub"><i class="icon">publications</i><span class="name">publications</span></a></li>
+					<li><a href="#" class="icon-scheduled"><i class="icon">schedule</i><span class="name">schedule</span></a></li>
+					<li><a href="#" class="icon-media"><i class="icon">media</i><span class="name">media</span></a></li>
+					<li><a href="#" class="icon-feedback"><i class="icon">feedback</i><span class="name">feedback</span></a></li>
+					<li class="last"><a href="#" class="icon-task"><i class="icon">tasks</i><span class="name">tasks</span></a></li>
+				</ul>
+				<!-- connections -->
+				<ul class="nav fn-clear">
+					<li class="on"><a href="#" class="icon-connect"><i class="icon">connections</i><span class="name">connections</span></a></li>
+					<li><a href="#" class="icon-easy-connect"><i class="icon">easy connect</i><span class="name">easy connect</span></a></li>
+					<li class="last"><a href="#" class="icon-discover"><i class="icon">discover</i><span class="name">discover</span></a></li>
+				</ul>
+				<!-- team -->
+				<ul class="nav fn-clear">
+					<li class="on"><a href="#" class="icon-t-overview"><i class="icon">team overview</i><span class="name">team overview</span></a></li>
+					<li><a href="#" class="icon-member"><i class="icon">members</i><span class="name">members</span></a></li>
+					<li class="last"><a href="#" class="icon-task"><i class="icon">tasks</i><span class="name">tasks</span></a></li>
+				</ul>
+				<!-- feed -->
+				<ul class="nav fn-clear">
+					<li class="on"><a href="#" class="icon-subs"><i class="icon">subscriptions</i><span class="name">subscriptions</span></a></li>
+					<li><a href="#" class="icon-f-agent"><i class="icon">feed agent</i><span class="name">feed agent</span></a></li>
+					<li><a href="#" class="icon-c-search"><i class="icon">content search</i><span class="name">content search</span></a></li>
+					<li class="last"><a href="#" class="icon-lib"><i class="icon">library</i><span class="name">library</span></a></li>
+				</ul>
+				<!-- setting -->
+				<ul class="nav fn-clear">
+					<li class="on"><a href="#" class="icon-easy-connect"><i class="icon">connect</i><span class="name">connect</span></a>
+						<dl>
+							<dd><a href="#">facebook</a></dd>
+							<dd><a href="#">twitter</a></dd>
+							<dd><a href="#">linkedin</a></dd>
+							<dd><a href="#">hyves</a></dd>
+							<dd><a href="#">general</a></dd>
+						</dl>
+					</li>
+					<li class="over-dd"><a href="#" class="icon-my-account"><i class="icon">account</i><span class="name">account</span></a>
+						<dl>
+							<dd><a href="#">facebook</a></dd>
+							<dd><a href="#">twitter</a></dd>
+							<dd><a href="#">linkedin</a></dd>
+							<dd><a href="#">hyves</a></dd>
+							<dd><a href="#">general</a></dd>
+						</dl>
+					</li>
+					<li><a href="#" class="icon-groepen"><i class="icon">groups</i><span class="name">groups</span></a></li>
+					<li class="last"><a href="#" class="icon-package"><i class="icon">package</i><span class="name">package</span></a></li>
+				</ul>
+				<!-- backoffice -->
+				<ul class="nav fn-clear">
+					<li class="on"><a href="#" class="icon-dashboard"><i class="icon">dashboard</i><span class="name">dashboard</span></a></li>
+					<li><a href="#" class="icon-account"><i class="icon">accounts</i><span class="name">accounts</span></a></li>
+					<li><a href="#" class="icon-package"><i class="icon">packages</i><span class="name">packages</span></a></li>
+					<li><a href="#" class="icon-g-setting"><i class="icon">global settings</i><span class="name">global settings</span></a></li>
+					<li><a href="#" class="icon-h-system"><i class="icon">help system</i><span class="name">help system</span></a></li>
+					<li><a href="#" class="icon-translation"><i class="icon">translations</i><span class="name">translations</span></a></li>
+					<li class="last"><a href="#" class="icon-noti"><i class="icon">notifications</i><span class="name">notifications</span><em class="ui-icon-message-num ui-archive-pos">10</em></a></li>
+				</ul>
+			</div>
+			<div class="content fn-clear">
+				<div class="connect">
+					<div class="g-top connect-option fn-clear">
+						<input type="checkbox" id="connect-as" />
+						<label for="connect-as">Connected as Cun Li</label>
+						<a href="#" class="ui-icon-tips tips">tips</a>
+						<a href="#" class="ui-btn">Disconnect</a>
+					</div>
+					<div class="g-top connect-head fn-clear">
+						<h3>Profile</h3>
+						<a href="#" class="ui-icon-tips tips">tips</a>
+						<a href="#" class="ui-btn bnt-edit">edit</a>
+						<div class="ui-select ui-zIndex-30">
+							<input type="hidden" class="input-hidden" />
+							<div class="ui-select-head"><b class="val">Please select</b><span class="arrow">more</span></div>
+							<ul>
+								<li data-value="0">Apple Feeds</li>
+								<li data-value="1">Animal</li>
+								<li data-value="2">Babes &amp; Boobs</li>
+								<li data-value="3">Cars</li>
+							</ul>
+						</div>
+					</div>
+					<div class="cnt-profile">
+						<ul class="edit-items fn-clear">
+							<li class="edit-item">
+								<label for="user-name" class="field-name">Nick Name</label>
+								<div class="field-val">
+									<span class="txt">Cun Li</span>
+								</div>
+							</li>
+							<li class="edit-item">
+								<label for="user-name" class="field-name">First Name</label>
+								<div class="field-val">
+									<span class="txt">Cun</span>
+								</div>
+							</li>
+							<li class="edit-item">
+								<label for="user-name" class="field-name">Last Name</label>
+								<div class="field-val">
+									<span class="txt">Li</span>
+								</div>
+							</li>
+							<li class="edit-item">
+								<label for="user-name" class="field-name">Birthdat</label>
+								<div class="field-val">
+									<span class="txt">10/15/1975</span>
+								</div>
+							</li>
+							<li class="edit-item">
+								<label for="user-name" class="field-name">Avatar</label>
+								<div class="field-val">
+									<img src="./temp/avatar_100x100.png" alt="" class="avator">
+								</div>
+							</li>
+							<li class="edit-item">
+								<label for="user-name" class="field-name">Relationshipstatus</label>
+								<div class="field-val">
+									<span class="txt">Single</span>
+								</div>
+							</li>
+							<li class="edit-item">
+								<label for="user-name" class="field-name">Religion</label>
+								<div class="field-val">
+									<span class="txt">Tibetan Buddhism(Test)</span>
+								</div>
+							</li>
+							<li class="edit-item">
+								<label for="user-name" class="field-name">ReligionDescription</label>
+								<div class="field-val">
+									<span class="txt"></span>
+								</div>
+							</li>
+							<li class="edit-item">
+								<label for="user-name" class="field-name">PoliticalViews</label>
+								<div class="field-val">
+									<span class="txt"></span>
+								</div>
+							</li>
+							<li class="edit-item">
+								<label for="user-name" class="field-name">PoliticalViewsDescription</label>
+								<div class="field-val">
+									<span class="txt"></span>
+								</div>
+							</li>
+						</ul>	
+					</div>
+				</div>		
+				<div class="connect page-manage">
+					<div class="g-top cnt-head fn-clear">
+						<h3>Facebook pages</h3>
+						<span class="ui-btn">Manage pages</span>
+					</div>
+					<ul class="page-manage-list fn-clear">
+						<li class="fn-clear">
+							<img src="./temp/pic1_50x50.png" alt="" class="cover" />
+							<h3><a href="#">TestPage</a></h3>
+							<p class="summary">BUSINESS PERSON</p>
+							<span class="del">delete</span>
+						</li>
+						<li class="fn-clear">
+							<img src="./temp/pic1_50x50.png" alt="" class="cover" />
+							<h3><a href="#">TestPage</a></h3>
+							<p class="summary">BUSINESS PERSON</p>
+							<span class="del">delete</span>
+						</li>
+					</ul>
+				</div>				
+			</div>
+		</div>
+	</div>
+<script src="./js/jquery-1.8.0.min.js"></script>
+<script src="./js/ui_common.js"></script>
+</body>
+</html>

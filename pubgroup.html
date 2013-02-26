@@ -1,0 +1,868 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>edit pubgroup</title>
+	<link rel="stylesheet" type="text/css" href="./css/reset.css" media="all">
+	<!-- <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato" media="all"> -->
+	<link rel="stylesheet" type="text/css" href="./css/common.css" media="all">
+	<link rel="stylesheet" type="text/css" href="./css/ui_common.css" media="all">
+	<link rel="stylesheet" type="text/css" href="./css/index.css" media="all">
+	<link rel="stylesheet" type="text/css" href="./css/index_icon.css" media="all">
+	<link rel="stylesheet" type="text/css" href="./css/edit_pubgroup.css" media="all">
+</head>
+<body>
+	<div class="main">
+		<div class="header">
+			<!-- login state -->
+			<div class="login-reg">
+				<a href="#">logout</a>
+				<a href="#">contact</a>
+			</div>
+			<div class="top">
+				<div class="container fn-clear">
+					<!-- logo image -->
+					<a href="#" class="logo"><img src="./images/logo.png" alt="logo" width="126" height="21"></a>
+					<!-- top navigation -->
+					<ul class="nav" id="header-nav">
+						<li class="on">
+							<a href="#" class="icon-home">home</a>
+						</li>
+						<li>
+							<a href="#" class="icon-publish">publish</a>
+						</li>
+						<li>
+							<a href="#" class="icon-connect">connections</a>
+						</li>
+						<li>
+							<a href="#" class="icon-pub-groups">pub groups</a>
+						</li>
+						<li>
+							<a href="#" class="icon-feeds">feeds</a>
+						</li>
+						<li>
+							<a href="#" class="set">settings</a>
+						</li>
+						<li class="last" id="back-office">
+							<a href="#" class="back-office">back office</a>
+						</li>
+					</ul>
+					<!-- search box -->
+					<div class="search"><div class="container"><input type="text" class="ui-input-text" /><a class="search-btn">search</a></div></div>
+					<!-- compose btn -->
+					<a href="#" class="compose" id="compose">compose</a>
+				</div>
+			</div>
+			<!-- notice center -->
+			<div class="notice-center fn-clear">
+					<span class="news">Richard van Hooijdonk | MarketingMonday</span>
+					<a href="#" class="mail"><em class="ui-icon-message-num">10</em></a>
+					<a href="#" class="message"></a>
+					<a href="#" class="refresh"></a>
+					<div class="ui-select ui-zIndex-30">
+						<input type="hidden" value="2" class="input-hidden" />
+						<div class="ui-select-head"><b class="val">group</b><span class="arrow">more</span></div>
+						<ul>
+							<li data-value="0">Apple Feeds</li>
+							<li data-value="1">Animal</li>
+							<li data-value="2">Babes &amp; Boobs</li>
+							<li data-value="3">Cars</li>
+						</ul>
+					</div>
+					<a href="#" class="btn">btn</a>
+			</div>
+		</div>
+		<!-- 主体内容区 -->
+		<div class="content-wrap">
+			<!-- 侧边导航 -->
+			<div id="menu">
+				<!-- home -->
+				<ul class="nav current fn-clear" id="nav-home">
+					<li class="on"><a href="#" class="icon-dashboard"><i class="icon">dashboard</i><span class="name">dashboard</span></a></li>
+					<li><a href="#" class="icon-rapportage"><i class="icon">rapportage</i><span class="name">rapportage</span></a></li>
+					<li><a href="#" class="icon-activiteiten"><i class="icon">activiteiten</i><span class="name">activiteiten</span></a></li>
+				</ul>
+				<!-- publish -->
+				<ul class="nav fn-clear">
+					<li class="on"><a href="#" class="icon-pub"><i class="icon">publications</i><span class="name">publications</span></a></li>
+					<li><a href="#" class="icon-scheduled"><i class="icon">schedule</i><span class="name">schedule</span></a></li>
+					<li><a href="#" class="icon-media"><i class="icon">media</i><span class="name">media</span></a></li>
+					<li><a href="#" class="icon-feedback"><i class="icon">feedback</i><span class="name">feedback</span></a></li>
+					<li class="last"><a href="#" class="icon-task"><i class="icon">tasks</i><span class="name">tasks</span></a></li>
+				</ul>
+				<!-- connections -->
+				<ul class="nav fn-clear">
+					<li class="on"><a href="#" class="icon-connect"><i class="icon">connections</i><span class="name">connections</span></a></li>
+					<li><a href="#" class="icon-easy-connect"><i class="icon">easy connect</i><span class="name">easy connect</span></a></li>
+					<li class="last"><a href="#" class="icon-discover"><i class="icon">discover</i><span class="name">discover</span></a></li>
+				</ul>
+				<!-- team -->
+				<ul class="nav fn-clear">
+					<li class="on"><a href="#" class="icon-t-overview"><i class="icon">team overview</i><span class="name">team overview</span></a></li>
+					<li><a href="#" class="icon-member"><i class="icon">members</i><span class="name">members</span></a></li>
+					<li class="last"><a href="#" class="icon-task"><i class="icon">tasks</i><span class="name">tasks</span></a></li>
+				</ul>
+				<!-- feed -->
+				<ul class="nav fn-clear">
+					<li class="on"><a href="#" class="icon-subs"><i class="icon">subscriptions</i><span class="name">subscriptions</span></a></li>
+					<li><a href="#" class="icon-f-agent"><i class="icon">feed agent</i><span class="name">feed agent</span></a></li>
+					<li><a href="#" class="icon-c-search"><i class="icon">content search</i><span class="name">content search</span></a></li>
+					<li class="last"><a href="#" class="icon-lib"><i class="icon">library</i><span class="name">library</span></a></li>
+				</ul>
+				<!-- setting -->
+				<ul class="nav fn-clear">
+					<li class="on"><a href="#" class="icon-easy-connect"><i class="icon">connect</i><span class="name">connect</span></a>
+						<dl>
+							<dd><a href="#">facebook</a></dd>
+							<dd><a href="#">twitter</a></dd>
+							<dd><a href="#">linkedin</a></dd>
+							<dd><a href="#">hyves</a></dd>
+							<dd><a href="#">general</a></dd>
+						</dl>
+					</li>
+					<li class="over-dd"><a href="#" class="icon-my-account"><i class="icon">account</i><span class="name">account</span></a>
+						<dl>
+							<dd><a href="#">facebook</a></dd>
+							<dd><a href="#">twitter</a></dd>
+							<dd><a href="#">linkedin</a></dd>
+							<dd><a href="#">hyves</a></dd>
+							<dd><a href="#">general</a></dd>
+						</dl>
+					</li>
+					<li><a href="#" class="icon-groepen"><i class="icon">groups</i><span class="name">groups</span></a></li>
+					<li class="last"><a href="#" class="icon-package"><i class="icon">package</i><span class="name">package</span></a></li>
+				</ul>
+				<!-- backoffice -->
+				<ul class="nav fn-clear">
+					<li class="on"><a href="#" class="icon-dashboard"><i class="icon">dashboard</i><span class="name">dashboard</span></a></li>
+					<li><a href="#" class="icon-account"><i class="icon">accounts</i><span class="name">accounts</span></a></li>
+					<li><a href="#" class="icon-package"><i class="icon">packages</i><span class="name">packages</span></a></li>
+					<li><a href="#" class="icon-g-setting"><i class="icon">global settings</i><span class="name">global settings</span></a></li>
+					<li><a href="#" class="icon-h-system"><i class="icon">help system</i><span class="name">help system</span></a></li>
+					<li><a href="#" class="icon-translation"><i class="icon">translations</i><span class="name">translations</span></a></li>
+					<li class="last"><a href="#" class="icon-noti"><i class="icon">notifications</i><span class="name">notifications</span><em class="ui-icon-message-num ui-archive-pos">10</em></a></li>
+				</ul>
+			</div>
+			<div class="content fn-clear" id="content">
+				<div class="edit-pubgroup">
+					<div class="edit-pub-top">
+						<span class="ui-icon ui-icon-pubgroup">edit pubgroup icon</span>
+						<h3><b>Edit</b> pubgroup</h3>
+						<span class="ui-icon-tips">tips</span>
+						<span class="ui-btn btn-save">save chances</span>
+					</div>
+					<div class="edit-pub-cont fn-clear">
+						<div class="edit-pub-cont-t">
+							<div><label for="name">name</label>
+								<input type="text" id="name" class="ui-input-text edit-p-c-input">
+							</div>
+							<div class="item-add-pubgroup">
+								<label></label>
+								<div class="ui-select  ui-zIndex-40">
+									<input type="hidden" class="input-hidden"/>
+									<div class="ui-select-head"><b class="val">Current user</b><span class="arrow">more</span></div>
+									<ul>
+										<li data-value="0">Apple Feeds</li>
+										<li data-value="1">Animal</li>
+										<li data-value="2">Babes &amp; Boobs</li>
+										<li data-value="3">Cars</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<!-- The first -->
+						<div class="edit-p-c-item">
+							<span class="ui-icon-close">close</span>
+							<div><label>user</label>Bram</div>
+							<div><label>page</label>Nike Football</div>
+							
+							<div class="opera-area-sel fn-clear">
+								<div class="sel-item">
+									<div class="ui-select sel-pub-source ui-zIndex-30">
+										<input type="hidden" value="2" class="input-hidden"/>
+										<div class="ui-select-head"><span class="ui-icon ui-sns-icon ui-bg-n"></span><b class="val">Please select</b><span class="arrow">more</span></div>
+										<ul>
+											<li data-value="none"><span class="ui-icon ui-sns-icon ui-bg-n"></span>Please select</li>
+											<li data-value="0"><span class="ui-icon ui-sns-icon ui-icon-facebook"></span>Apple Feeds</li>
+											<li data-value="2"><span class="ui-icon ui-sns-icon ui-icon-linkedin"></span>Babes &amp; Boobs</li>
+											<li data-value="1"><span class="ui-icon ui-sns-icon ui-icon-twitter"></span>Animal</li>
+										</ul>
+									</div>
+								</div>
+								<div class="sel-item">
+									<div class="ui-select ui-zIndex-30">
+										<input type="hidden" class="input-hidden"/>
+										<div class="ui-select-head"><b class="val">publish and listen</b><span class="arrow">more</span></div>
+										<ul>
+											<li data-value="0">Apple Feeds</li>
+											<li data-value="1">Animal</li>
+											<li data-value="2">Babes &amp; Boobs</li>
+											<li data-value="3">Cars</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="edit-p-usr-cont ui-ml-80 fn-clear">
+								<span class="icon-arrow fn-toggle-usr"></span>
+								<div class="edit-p-usr-f">
+									<div class="edit-p-usr fn-show">
+										<div class="c-usr-sel ui-w-155">
+											<div class="ui-select  ui-zIndex-10">
+												<input type="hidden"  class="input-hidden"/>
+												<div class="ui-select-head"><b class="val">Current user</b><span class="arrow">more</span></div>
+												<ul>
+													<li data-value="0">Apple Feeds</li>
+													<li data-value="1">Animal</li>
+													<li data-value="2">Babes &amp; Boobs</li>
+													<li data-value="3">Cars</li>
+												</ul>
+											</div>
+										</div>
+										<div class="c-usr-type fn-clear">
+											<span class="usr-type">type</span>
+											<div class="rt">
+												<p class="fn-usr-item">
+													<label for="fn-usr-type"><input type="radio" name="usr-type" id="fn-usr-type">User status</label>
+												</p>
+												<p class="fn-usr-item">
+													<label for="fn-page-post"><input type="radio" name="usr-type" id="fn-page-post">Page post</label>
+												</p>
+											</div>
+											<div class="page">
+												<div class="page-search">
+													<label class="search-name">page</label>
+													<div class="ui-search-input">
+														<input type="text" class="ui-input-text search-txt">
+														<span class="ui-icon-search search-btn">search button</span>
+													</div>
+													<div class="search-result">
+														<div class="result-top"></div>
+														<div class="result-mid">
+															<div class="result-title">
+																<h3>pages</h3>
+															</div>
+															<ul class="result-list fn-clear">
+																<li>
+																	<img src="./temp/pic_40x40.png" alt="xxx" class="cover">
+																	<div class="detail">
+																		<h3>Nike Football Nederland</h3>
+																		<div class="category">Company</div>
+																		<p><em class="likes">51.465</em> like this • <em class="talk">1232</em> talking about this</p>
+																	</div>
+																</li>
+																<li>
+																	<img src="./temp/pic_40x40.png" alt="xxx" class="cover">
+																	<div class="detail">
+																		<h3>Nike Football Nederland</h3>
+																		<div class="category">Company</div>
+																		<p><em class="likes">51.465</em> like this • <em class="talk">1232</em> talking about this</p>
+																	</div>
+																</li>
+																<li>
+																	<img src="./temp/pic_40x40.png" alt="xxx" class="cover">
+																	<div class="detail">
+																		<h3>Nike Football Nederland</h3>
+																		<div class="category">Company</div>
+																		<p><em class="likes">51.465</em> like this • <em class="talk">1232</em> talking about this</p>
+																	</div>
+																</li>
+																<li>
+																	<img src="./temp/pic_40x40.png" alt="xxx" class="cover">
+																	<div class="detail">
+																		<h3>Nike Football Nederland</h3>
+																		<div class="category">Company</div>
+																		<p><em class="likes">51.465</em> like this • <em class="talk">1232</em> talking about this</p>
+																	</div>
+																</li>
+																<li>
+																	<img src="./temp/pic_40x40.png" alt="xxx" class="cover">
+																	<div class="detail">
+																		<h3>Nike Football Nederland</h3>
+																		<div class="category">Company</div>
+																		<p><em class="likes">51.465</em> like this • <em class="talk">1232</em> talking about this</p>
+																	</div>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="edit-p-usr">
+										<div class="c-usr-sel ui-w-155">
+											<div class="ui-select  ui-zIndex-10">
+												<input type="hidden" class="input-hidden"/>
+												<div class="ui-select-head"><b class="val">Current user</b><span class="arrow">more</span></div>
+												<ul>
+													<li data-value="0">Apple Feeds</li>
+													<li data-value="1">Animal</li>
+													<li data-value="2">Babes &amp; Boobs</li>
+													<li data-value="3">Cars</li>
+												</ul>
+											</div>
+										</div>
+										<div class="c-usr-type fn-clear">
+											<span class="usr-type">type</span>
+											<div class="rt">
+												<p class="fn-usr-item">
+													<label for="fn-usr-type"><input type="radio" name="usr-type" id="fn-usr-type">User status</label>
+												</p>
+												<p class="fn-usr-item">
+													<label for="fn-page-post"><input type="radio" name="usr-type" id="fn-page-post">Page post</label>
+												</p>
+											</div>
+											<div class="page">
+												<div class="page-search">
+													<label class="search-name">page</label>
+													<div class="ui-search-input">
+														<input type="text" class="ui-input-text search-txt">
+														<span class="ui-icon-search search-btn">search button</span>
+													</div>
+													<div class="search-result">
+														<div class="result-top"></div>
+														<div class="result-mid">
+															<div class="result-title">
+																<h3>pages</h3>
+															</div>
+															<ul class="result-list fn-clear">
+																<li>
+																	<img src="./temp/pic_40x40.png" alt="xxx" class="cover">
+																	<div class="detail">
+																		<h3>Nike Football Nederland</h3>
+																		<div class="category">Company</div>
+																		<p><em class="likes">51.465</em> like this • <em class="talk">1232</em> talking about this</p>
+																	</div>
+																</li>
+																<li>
+																	<img src="./temp/pic_40x40.png" alt="xxx" class="cover">
+																	<div class="detail">
+																		<h3>Nike Football Nederland</h3>
+																		<div class="category">Company</div>
+																		<p><em class="likes">51.465</em> like this • <em class="talk">1232</em> talking about this</p>
+																	</div>
+																</li>
+																<li>
+																	<img src="./temp/pic_40x40.png" alt="xxx" class="cover">
+																	<div class="detail">
+																		<h3>Nike Football Nederland</h3>
+																		<div class="category">Company</div>
+																		<p><em class="likes">51.465</em> like this • <em class="talk">1232</em> talking about this</p>
+																	</div>
+																</li>
+																<li>
+																	<img src="./temp/pic_40x40.png" alt="xxx" class="cover">
+																	<div class="detail">
+																		<h3>Nike Football Nederland</h3>
+																		<div class="category">Company</div>
+																		<p><em class="likes">51.465</em> like this • <em class="talk">1232</em> talking about this</p>
+																	</div>
+																</li>
+																<li>
+																	<img src="./temp/pic_40x40.png" alt="xxx" class="cover">
+																	<div class="detail">
+																		<h3>Nike Football Nederland</h3>
+																		<div class="category">Company</div>
+																		<p><em class="likes">51.465</em> like this • <em class="talk">1232</em> talking about this</p>
+																	</div>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="edit-p-usr">
+										<div class="c-usr-type c-usr-type-twitter fn-clear">
+											<span class="usr-type">type</span>
+											<div class="rt">
+												<div class="ui-select ui-zIndex-10">
+													<input type="hidden" data-value="none" class="input-hidden"/>
+													<div class="ui-select-head"><b class="val">Please select</b><span class="arrow">more</span></div>
+													<ul>
+														<li data-value="none">Please select</li>
+														<li data-value="1">Animal</li>
+														<li data-value="2">Babes &amp; Boobs</li>
+														<li data-value="3">Cars</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- The second -->
+						<div class="edit-p-c-item">
+							<span class="ui-icon-close">close</span>
+							<p><label>user</label>Bram</p>
+							<p><label>page</label>Nike Football</p>
+							<div class="opera-area-sel fn-clear">
+								<div class="sel-item">
+									<div class="ui-select sel-pub-source ui-zIndex-20">
+										<input type="hidden" value="none" class="input-hidden"/>
+										<div class="ui-select-head"><span class="ui-icon ui-sns-icon ui-bg-n"></span><b class="val">Please select</b><span class="arrow">more</span></div>
+										<ul>
+											<li data-value="none"><span class="ui-icon ui-sns-icon ui-bg-n"></span>Please select</li>
+											<li data-value="0"><span class="ui-icon ui-sns-icon ui-icon-facebook"></span>Apple Feeds</li>
+											<li data-value="2"><span class="ui-icon ui-sns-icon ui-icon-linkedin"></span>Babes &amp; Boobs</li>
+											<li data-value="1"><span class="ui-icon ui-sns-icon ui-icon-twitter"></span>Animal</li>
+										</ul>
+									</div>
+								</div>
+								<div class="sel-item">
+									<div class="ui-select ui-zIndex-20">
+										<input type="hidden" class="input-hidden"/>
+										<div class="ui-select-head"><b class="val">publish and listen</b><span class="arrow">more</span></div>
+										<ul>
+											<li data-value="0">Apple Feeds</li>
+											<li data-value="1">Animal</li>
+											<li data-value="2">Babes &amp; Boobs</li>
+											<li data-value="3">Cars</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="edit-p-usr-cont ui-ml-80 fn-clear">
+								<span class="icon-arrow fn-toggle-usr"></span>
+								<div class="edit-p-usr-f">
+									<div class="edit-p-usr fn-show">
+										<div class="c-usr-sel ui-w-155">
+											<div class="ui-select  ui-zIndex-10">
+												<input type="hidden" class="input-hidden"/>
+												<div class="ui-select-head"><b class="val">Current user</b><span class="arrow">more</span></div>
+												<ul>
+													<li data-value="0">Apple Feeds</li>
+													<li data-value="1">Animal</li>
+													<li data-value="2">Babes &amp; Boobs</li>
+													<li data-value="3">Cars</li>
+												</ul>
+											</div>
+										</div>
+										<div class="c-usr-type fn-clear">
+											<span class="usr-type">type</span>
+											<div class="rt">
+												<p class="fn-usr-item">
+													<label for="fn-usr-type"><input type="radio" name="usr-type" id="fn-usr-type">User status</label>
+												</p>
+												<p class="fn-usr-item">
+													<label for="fn-page-post"><input type="radio" name="usr-type" id="fn-page-post">Page post</label>
+												</p>
+											</div>
+											<div class="page">
+												<div class="page-search">
+													<label class="search-name">page</label>
+													<div class="ui-search-input">
+														<input type="text" class="ui-input-text search-txt">
+														<span class="ui-icon-search search-btn">search button</span>
+													</div>
+													<div class="search-result">
+														<div class="result-top"></div>
+														<div class="result-mid">
+															<div class="result-title">
+																<h3>pages</h3>
+															</div>
+															<ul class="result-list fn-clear">
+																<li>
+																	<img src="./temp/pic_40x40.png" alt="xxx" class="cover">
+																	<div class="detail">
+																		<h3>Nike Football Nederland</h3>
+																		<div class="category">Company</div>
+																		<p><em class="likes">51.465</em> like this • <em class="talk">1232</em> talking about this</p>
+																	</div>
+																</li>
+																<li>
+																	<img src="./temp/pic_40x40.png" alt="xxx" class="cover">
+																	<div class="detail">
+																		<h3>Nike Football Nederland</h3>
+																		<div class="category">Company</div>
+																		<p><em class="likes">51.465</em> like this • <em class="talk">1232</em> talking about this</p>
+																	</div>
+																</li>
+																<li>
+																	<img src="./temp/pic_40x40.png" alt="xxx" class="cover">
+																	<div class="detail">
+																		<h3>Nike Football Nederland</h3>
+																		<div class="category">Company</div>
+																		<p><em class="likes">51.465</em> like this • <em class="talk">1232</em> talking about this</p>
+																	</div>
+																</li>
+																<li>
+																	<img src="./temp/pic_40x40.png" alt="xxx" class="cover">
+																	<div class="detail">
+																		<h3>Nike Football Nederland</h3>
+																		<div class="category">Company</div>
+																		<p><em class="likes">51.465</em> like this • <em class="talk">1232</em> talking about this</p>
+																	</div>
+																</li>
+																<li>
+																	<img src="./temp/pic_40x40.png" alt="xxx" class="cover">
+																	<div class="detail">
+																		<h3>Nike Football Nederland</h3>
+																		<div class="category">Company</div>
+																		<p><em class="likes">51.465</em> like this • <em class="talk">1232</em> talking about this</p>
+																	</div>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="edit-p-usr">
+										<div class="c-usr-sel ui-w-155">
+											<div class="ui-select  ui-zIndex-10">
+												<input type="hidden" class="input-hidden"/>
+												<div class="ui-select-head"><b class="val">Current user</b><span class="arrow">more</span></div>
+												<ul>
+													<li data-value="0">Apple Feeds</li>
+													<li data-value="1">Animal</li>
+													<li data-value="2">Babes &amp; Boobs</li>
+													<li data-value="3">Cars</li>
+												</ul>
+											</div>
+										</div>
+										<div class="c-usr-type fn-clear">
+											<span class="usr-type">type</span>
+											<div class="rt">
+												<p class="fn-usr-item">
+													<label for="fn-usr-type"><input type="radio" name="usr-type" id="fn-usr-type">User status</label>
+												</p>
+												<p class="fn-usr-item">
+													<label for="fn-page-post"><input type="radio" name="usr-type" id="fn-page-post">Page post</label>
+												</p>
+											</div>
+											<div class="page">
+												<div class="page-search">
+													<label class="search-name">page</label>
+													<div class="ui-search-input">
+														<input type="text" class="ui-input-text search-txt">
+														<span class="ui-icon-search search-btn">search button</span>
+													</div>
+													<div class="search-result">
+														<div class="result-top"></div>
+														<div class="result-mid">
+															<div class="result-title">
+																<h3>pages</h3>
+															</div>
+															<ul class="result-list fn-clear">
+																<li>
+																	<img src="./temp/pic_40x40.png" alt="xxx" class="cover">
+																	<div class="detail">
+																		<h3>Nike Football Nederland</h3>
+																		<div class="category">Company</div>
+																		<p><em class="likes">51.465</em> like this • <em class="talk">1232</em> talking about this</p>
+																	</div>
+																</li>
+																<li>
+																	<img src="./temp/pic_40x40.png" alt="xxx" class="cover">
+																	<div class="detail">
+																		<h3>Nike Football Nederland</h3>
+																		<div class="category">Company</div>
+																		<p><em class="likes">51.465</em> like this • <em class="talk">1232</em> talking about this</p>
+																	</div>
+																</li>
+																<li>
+																	<img src="./temp/pic_40x40.png" alt="xxx" class="cover">
+																	<div class="detail">
+																		<h3>Nike Football Nederland</h3>
+																		<div class="category">Company</div>
+																		<p><em class="likes">51.465</em> like this • <em class="talk">1232</em> talking about this</p>
+																	</div>
+																</li>
+																<li>
+																	<img src="./temp/pic_40x40.png" alt="xxx" class="cover">
+																	<div class="detail">
+																		<h3>Nike Football Nederland</h3>
+																		<div class="category">Company</div>
+																		<p><em class="likes">51.465</em> like this • <em class="talk">1232</em> talking about this</p>
+																	</div>
+																</li>
+																<li>
+																	<img src="./temp/pic_40x40.png" alt="xxx" class="cover">
+																	<div class="detail">
+																		<h3>Nike Football Nederland</h3>
+																		<div class="category">Company</div>
+																		<p><em class="likes">51.465</em> like this • <em class="talk">1232</em> talking about this</p>
+																	</div>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="edit-p-usr">
+										<div class="c-usr-type c-usr-type-twitter fn-clear">
+											<span class="usr-type">type</span>
+											<div class="rt">
+												<div class="ui-select ui-zIndex-10">
+													<input type="hidden" data-value="none" class="input-hidden"/>
+													<div class="ui-select-head"><b class="val">Please select</b><span class="arrow">more</span></div>
+													<ul>
+														<li data-value="none">Please select</li>
+														<li data-value="1">Animal</li>
+														<li data-value="2">Babes &amp; Boobs</li>
+														<li data-value="3">Cars</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- The third -->
+						<div class="edit-p-c-item">
+							<span class="ui-icon-close">close</span>
+							<p><label>user</label>Bram</p>
+							<p><label>page</label>Nike Football</p>
+							<div class="opera-area-sel fn-clear">
+								<div class="sel-item">
+									<div class="ui-select sel-pub-source ui-zIndex-10">
+										<input type="hidden" value="none" class="input-hidden"/>
+										<div class="ui-select-head"><span class="ui-icon ui-sns-icon ui-icon-facebook"></span><b class="val">Facebook</b><span class="arrow">more</span></div>
+										<ul>
+											<li data-value="none"><span class="ui-icon ui-sns-icon ui-bg-n"></span>Please select</li>
+											<li data-value="0"><span class="ui-icon ui-sns-icon ui-icon-facebook"></span>Apple Feeds</li>
+											<li data-value="2"><span class="ui-icon ui-sns-icon ui-icon-linkedin"></span>Babes &amp; Boobs</li>
+											<li data-value="1"><span class="ui-icon ui-sns-icon ui-icon-twitter"></span>Animal</li>
+										</ul>
+									</div>
+								</div>
+								<div class="sel-item">
+									<div class="ui-select ui-zIndex-10">
+										<input type="hidden" class="input-hidden"/>
+										<div class="ui-select-head"><b class="val">publish and listen</b><span class="arrow">more</span></div>
+										<ul>
+											<li data-value="0">Apple Feeds</li>
+											<li data-value="1">Animal</li>
+											<li data-value="2">Babes &amp; Boobs</li>
+											<li data-value="3">Cars</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="edit-p-usr-cont ui-ml-80 fn-clear">
+								<span class="icon-arrow fn-toggle-usr"></span>
+								<div class="edit-p-usr-f">
+									<div class="edit-p-usr fn-show">
+										<div class="c-usr-sel ui-w-155">
+											<div class="ui-select  ui-zIndex-10">
+												<input type="hidden" class="input-hidden"/>
+												<div class="ui-select-head"><b class="val">Current user</b><span class="arrow">more</span></div>
+												<ul>
+													<li data-value="0">Apple Feeds</li>
+													<li data-value="1">Animal</li>
+													<li data-value="2">Babes &amp; Boobs</li>
+													<li data-value="3">Cars</li>
+												</ul>
+											</div>
+										</div>
+										<div class="c-usr-type fn-clear">
+											<span class="usr-type">type</span>
+											<div class="rt">
+												<p class="fn-usr-item">
+													<label for="fn-usr-type"><input type="radio" name="usr-type" id="fn-usr-type">User status</label>
+												</p>
+												<p class="fn-usr-item">
+													<label for="fn-page-post"><input type="radio" name="usr-type" id="fn-page-post">Page post</label>
+												</p>
+											</div>
+											<div class="page">
+												<div class="page-search">
+													<label class="search-name">page</label>
+													<div class="ui-search-input">
+														<input type="text" class="ui-input-text search-txt">
+														<span class="ui-icon-search search-btn">search button</span>
+													</div>
+													<div class="search-result">
+														<div class="result-top"></div>
+														<div class="result-mid">
+															<div class="result-title">
+																<h3>pages</h3>
+															</div>
+															<ul class="result-list fn-clear">
+																<li>
+																	<img src="./temp/pic_40x40.png" alt="xxx" class="cover">
+																	<div class="detail">
+																		<h3>Nike Football Nederland</h3>
+																		<div class="category">Company</div>
+																		<p><em class="likes">51.465</em> like this • <em class="talk">1232</em> talking about this</p>
+																	</div>
+																</li>
+																<li>
+																	<img src="./temp/pic_40x40.png" alt="xxx" class="cover">
+																	<div class="detail">
+																		<h3>Nike Football Nederland</h3>
+																		<div class="category">Company</div>
+																		<p><em class="likes">51.465</em> like this • <em class="talk">1232</em> talking about this</p>
+																	</div>
+																</li>
+																<li>
+																	<img src="./temp/pic_40x40.png" alt="xxx" class="cover">
+																	<div class="detail">
+																		<h3>Nike Football Nederland</h3>
+																		<div class="category">Company</div>
+																		<p><em class="likes">51.465</em> like this • <em class="talk">1232</em> talking about this</p>
+																	</div>
+																</li>
+																<li>
+																	<img src="./temp/pic_40x40.png" alt="xxx" class="cover">
+																	<div class="detail">
+																		<h3>Nike Football Nederland</h3>
+																		<div class="category">Company</div>
+																		<p><em class="likes">51.465</em> like this • <em class="talk">1232</em> talking about this</p>
+																	</div>
+																</li>
+																<li>
+																	<img src="./temp/pic_40x40.png" alt="xxx" class="cover">
+																	<div class="detail">
+																		<h3>Nike Football Nederland</h3>
+																		<div class="category">Company</div>
+																		<p><em class="likes">51.465</em> like this • <em class="talk">1232</em> talking about this</p>
+																	</div>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="edit-p-usr">
+										<div class="c-usr-sel ui-w-155">
+											<div class="ui-select  ui-zIndex-10">
+												<input type="hidden" class="input-hidden"/>
+												<div class="ui-select-head"><b class="val">Current user</b><span class="arrow">more</span></div>
+												<ul>
+													<li data-value="0">Apple Feeds</li>
+													<li data-value="1">Animal</li>
+													<li data-value="2">Babes &amp; Boobs</li>
+													<li data-value="3">Cars</li>
+												</ul>
+											</div>
+										</div>
+										<div class="c-usr-type fn-clear">
+											<span class="usr-type">type</span>
+											<div class="rt">
+												<p class="fn-usr-item">
+													<label for="fn-usr-type"><input type="radio" name="usr-type" id="fn-usr-type">User status</label>
+												</p>
+												<p class="fn-usr-item">
+													<label for="fn-page-post"><input type="radio" name="usr-type" id="fn-page-post">Page post</label>
+												</p>
+											</div>
+											<div class="page">
+												<div class="page-search">
+													<label class="search-name">page</label>
+													<div class="ui-search-input">
+														<input type="text" class="ui-input-text search-txt">
+														<span class="ui-icon-search search-btn">search button</span>
+													</div>
+													<div class="search-result">
+														<div class="result-top"></div>
+														<div class="result-mid">
+															<div class="result-title">
+																<h3>pages</h3>
+															</div>
+															<ul class="result-list fn-clear">
+																<li>
+																	<img src="./temp/pic_40x40.png" alt="xxx" class="cover">
+																	<div class="detail">
+																		<h3>Nike Football Nederland</h3>
+																		<div class="category">Company</div>
+																		<p><em class="likes">51.465</em> like this • <em class="talk">1232</em> talking about this</p>
+																	</div>
+																</li>
+																<li>
+																	<img src="./temp/pic_40x40.png" alt="xxx" class="cover">
+																	<div class="detail">
+																		<h3>Nike Football Nederland</h3>
+																		<div class="category">Company</div>
+																		<p><em class="likes">51.465</em> like this • <em class="talk">1232</em> talking about this</p>
+																	</div>
+																</li>
+																<li>
+																	<img src="./temp/pic_40x40.png" alt="xxx" class="cover">
+																	<div class="detail">
+																		<h3>Nike Football Nederland</h3>
+																		<div class="category">Company</div>
+																		<p><em class="likes">51.465</em> like this • <em class="talk">1232</em> talking about this</p>
+																	</div>
+																</li>
+																<li>
+																	<img src="./temp/pic_40x40.png" alt="xxx" class="cover">
+																	<div class="detail">
+																		<h3>Nike Football Nederland</h3>
+																		<div class="category">Company</div>
+																		<p><em class="likes">51.465</em> like this • <em class="talk">1232</em> talking about this</p>
+																	</div>
+																</li>
+																<li>
+																	<img src="./temp/pic_40x40.png" alt="xxx" class="cover">
+																	<div class="detail">
+																		<h3>Nike Football Nederland</h3>
+																		<div class="category">Company</div>
+																		<p><em class="likes">51.465</em> like this • <em class="talk">1232</em> talking about this</p>
+																	</div>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="edit-p-usr">
+										<div class="c-usr-type c-usr-type-twitter fn-clear">
+											<span class="usr-type">type</span>
+											<div class="rt">
+												<div class="ui-select ui-zIndex-10">
+													<input type="hidden" data-value="none" class="input-hidden"/>
+													<div class="ui-select-head"><b class="val">Please select</b><span class="arrow">more</span></div>
+													<ul>
+														<li data-value="none">Please select</li>
+														<li data-value="1">Animal</li>
+														<li data-value="2">Babes &amp; Boobs</li>
+														<li data-value="3">Cars</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="edit-pub-panel">
+						<span class="ui-btn ui-add-btn">
+							<span class="txt">add channel</span>
+							<span class="btn">add</span>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script src="./js/jquery-1.8.0.min.js"></script>
+<script src="./js/ui_common.js"></script>
+<script type="text/javascript">
+	// <![CDATA[
+		$(".fn-toggle-usr").click(function () {//toggle sns
+			$(this).parent().toggleClass("on").parents(".edit-p-c-item").siblings(".edit-p-c-item").find(".edit-p-usr-cont").removeClass("on");
+		});
+		$(".sel-pub-source:not(.disabled) li:not(.disabled)").live("click",function(){//
+			var text = $(this).find(".ui-icon").clone();
+			var indexNum = +$(this).index() -1;
+			indexNum = indexNum < 0 ? 0 : indexNum;
+			$(this).parents(".opera-area-sel").next().find(".edit-p-usr").eq(indexNum).addClass("fn-show").siblings(".edit-p-usr").removeClass("fn-show");
+			$(this).parents(".ui-select").children(".ui-select-head").find(".ui-icon").replaceWith(text);
+		});
+	// ]]>
+</script>
+</body>
+</html>

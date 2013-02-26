@@ -1,0 +1,25 @@
+.ui-table .channels
+{
+	width: 70px;
+}
+.table-con .channels img
+{
+	float: left;
+	margin-top: 7px;
+}
+.ui-table .twitter-txt, .ui-table .facebook-txt, .ui-table .linkedin-txt
+{
+	width: 120px;
+}
+.ui-table .feedbacks
+{
+	width: 80px;
+}
+.ui-table .company
+{
+	width: 80px;
+}
+.ui-table  .tags
+{
+	width: 60px;
+}

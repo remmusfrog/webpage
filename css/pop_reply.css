@@ -1,0 +1,96 @@
+.pop-reply .pop-cont
+{
+	padding: 0 15px;
+}
+.pop-reply .reply-cont
+{
+	padding-left:65px;
+	position: relative;
+}
+.pop-reply .r-cover
+{
+	float: left;
+	position: absolute;
+	left:0;
+	top: 0;
+}
+.pop-reply .info
+{
+	color: #424242;
+	margin-bottom: 5px;
+	position: relative;
+	top: -5px;
+}
+.pop-reply .info span, .pop-reply .info a, .pop-reply .info img
+{
+	display: inline-block;
+	margin-right: 10px;
+	line-height: 20px;
+	vertical-align: middle;
+}
+.pop-reply .info a, .pop-reply .info img
+{
+	margin-right: 0;
+	color: #828283;
+}
+.pop-reply .info .r-tit
+{
+	margin-bottom: 5px;
+}
+.pop-reply .r-quote
+{
+	height: 1%;
+	line-height: 25px;
+	margin-bottom: 10px;
+}
+.pop-reply .r-quote .r-tit
+{
+	float: left;
+}
+.pop-reply .r-quote .ui-btn
+{
+	width: 53px;
+	float: right;
+}
+.pop-reply .reply-area
+{
+	margin-bottom: 10px;
+}
+.pop-reply .reply-area .ui-textarea
+{
+	width: 510px;
+	height: 64px;
+}
+
+.pop-reply .r-pubgroup
+{
+	margin-bottom: 5px;
+	font-size: 0;
+}
+.pop-reply .r-pubgroup .r-radio, .pop-reply .r-pubgroup .r-txt
+{
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 3px;
+	font-size: 12px;
+}
+.pop-reply .r-pubgroup .r-radio
+{
+	width: 13px;
+	height: 13px;
+}
+.pop-reply .r-pubgroup .r-select
+{
+	font-size: 12px;
+	padding-top: 10px;
+}
+.pop-reply .r-pubgroup .r-select span
+{
+	display: inline-block;
+	margin:0 5px 0 16px;
+	text-transform: capitalize;
+}
+.pop-reply .r-pubgroup .r-select select
+{
+	width:228px; 
+}

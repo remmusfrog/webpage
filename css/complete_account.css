@@ -1,0 +1,34 @@
+.edit-item .field-val .txt
+{
+	color: #828282;
+}
+.complete-account-top
+{
+	padding: 0 15px;
+	margin-bottom: 15px;
+	font-size: 0;
+}
+.complete-account-top span
+{
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 12px;
+}
+.complete-account-top .tit
+{
+	width: 125px;
+	text-align: right;
+	font-size: 12px;
+	line-height: 25px;
+	margin-right: 15px;
+	text-transform: capitalize;
+}
+.complete-account-top .ui-login-btn
+{
+	margin-right: 5px;
+}
+.complete-account-top .tips
+{
+	line-height: 12px;
+	max-width: 180px;
+}

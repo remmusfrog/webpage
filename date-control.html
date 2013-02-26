@@ -1,0 +1,328 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<select name="year" id="year">
+		<option value=""></option>
+	</select>
+	<select name="month" id="month">
+		<option value=""></option>
+	</select>
+	<select name="date" id="date">
+		<option value=""></option>
+	</select>
+<script type="text/javascript" src="./js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript">
+	//<![CDATA[
+		var set =
+		{
+			minDate:"2008-10-11 10:11:12",
+			maxDate:"2013-10-01 15:16:17",
+			selectedDate:"2012-10-22 02:30:31",
+			yearContainerId:"year",
+			monthContainerId:"month",
+			dateContainerId:"date"
+		}
+		var DateUtil = 
+		{
+			format:function(date)
+			{
+				var date    = date.split(/\s+/);
+				var dateArr = date[0].split("-");
+				var timeArr = date[1].split(":");
+				return{
+					year  : +dateArr[0],
+					month : +dateArr[1]-1,
+					date  : +dateArr[2],
+					hour  : +timeArr[0],
+					minute: +timeArr[1],
+					second: +timeArr[2]
+				}
+			},
+			isLeapYear:function(year)
+			{
+				if( (year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+				{
+					return true;
+				}else
+				{
+					return false;
+				}
+			},
+			dateCal:function(month,isLeapYear)
+			{
+				if( month >=12 || month < 0 )
+				{
+					return false;
+				}
+				if( month == 3 || month == 5 || month == 8 || month == 10)
+				{
+					return 30;
+				}else if( month == 1)
+				{
+					if(isLeapYear)
+					{
+						return 29;
+					}else
+					{
+						return 28;
+					}
+				}else
+				{
+					return 31;
+				}
+			}
+		}
+		var Simulator =
+		{
+			setValue:function(type,v)
+			{
+				global.domSaver[type].attr("value",v);
+				$('option',global.domSaver[type]).removeAttr("selected");
+				$('option[value='+v+']',global.domSaver[type]).attr("selected","selected");
+			},
+			getValue:function(type)
+			{
+				return $('option[selected=selected]',global.domSaver[type]).attr("value");
+			}
+		}
+		var global =
+		{
+			domSaver : {},
+			wrapperSaver : {},
+			viewSaver : {},
+			formatMax : {},
+			formatMin : {}
+		}
+		var Render = 
+		{
+			optionStr : '',
+			assembleOption:function(type,value,selected,outOfLimit)
+			{
+				var selected = selected ? 'selected="selected"' : '';
+				var disabled = outOfLimit ? ' disabled' : '';
+				var tmpl ='<option class="'+type+disabled+'" '+selected+disabled+' value="'+value+'">'+value+'</option>';
+				this.optionStr+=tmpl;
+			},
+			setOption:function(type,selectedValue)
+			{
+				global.domSaver[type].html(this.optionStr);
+				this.optionStr='';
+				Simulator.setValue(type,selectedValue);
+			},
+			assembleYear:function(current)
+			{
+				var maxYear = global.formatMax.year;
+				var minYear = global.formatMin.year;
+				while(minYear <= maxYear)
+				{
+					this.assembleOption('year',minYear,minYear==current.year);
+					minYear++;
+				}
+				this.setOption('year',current.year);
+			},
+			assembleMonth:function(current)
+			{
+				var month = 0;
+				while(month<=11)
+				{
+					this.assembleOption(
+					'month',
+					 month+1, 
+					 month == current.month, 
+					 ((current.year == global.formatMax.year) && (month > global.formatMax.month)) || ((current.year == global.formatMin.year) && (month < global.formatMin.month))); 
+					month++;	
+				}
+				this.setOption('month',(current.month+1));
+			},
+			assembleDate:function(current)
+			{
+				var date = 1;
+
+				var isLeapYear = DateUtil.isLeapYear(current.year);
+				var daysInMonth = DateUtil.dateCal(current.month,isLeapYear);
+				while(date <= daysInMonth)
+				{
+					this.assembleOption(
+					'date',
+					date,
+					date == current.date,
+					((current.year == global.formatMax.year) && (current.month == global.formatMax.month) && (date > global.formatMax.date)) || ((current.year == global.formatMin.year) && (current.month == global.formatMin.month) && (date < global.formatMin.date))
+					);
+					date++;
+				}
+				this.setOption('date',current.date);
+			},
+			init:function()
+			{
+				var selectedDate = DateUtil.format(set.selectedDate);
+				global.formatMax = DateUtil.format(set.maxDate);
+				global.formatMin = DateUtil.format(set.minDate);
+				this.setWarpper();
+				this.assemble('year',selectedDate);
+				this.assemble('month',selectedDate);
+				this.assemble('date',selectedDate);
+			},
+			assemble:function(fnName,args)
+			{
+				fnName = fnName.replace(/^.{1}/,function(i)
+				{
+					return i.toUpperCase();
+				});
+				this['assemble'+fnName](args);
+			},
+			setWarpper:function()
+			{
+				global.domSaver.year  = $("#"+set.yearContainerId);
+				global.domSaver.month = $("#"+set.monthContainerId);
+				global.domSaver.date  = $("#"+set.dateContainerId);
+
+				global.viewSaver.year  = $('option[selected=selected]',global.domSaver.year);
+				global.viewSaver.month = $('option[selected=selected]',global.domSaver.month);
+				global.viewSaver.date  = $('option[selected=selected]',global.domSaver.date);
+
+			}
+		}
+
+		var Event = 
+		{
+			public:function(target)
+			{
+				Simulator.setValue($(target).attr("name"),$(target).attr('value'));
+			},
+			onYearChange:function(e)
+			{
+				Event.public(e.target);
+				var year  = Simulator.getValue('year');
+				var dateObj = 
+				{	
+					year : year,
+					month : 0,
+					date : 1,
+					hour:0,
+					minute:0,
+					second:0
+				}
+				Render.assemble('month',dateObj);
+				dateObj.month = Simulator.getValue('month');
+				Render.assemble('date',dateObj);
+				// dateObj.date = Simulator.getValue('date');
+				// Render.assemble('hour',dateObj);
+				// dateObj.hour = Simulator.getValue('hour');
+				// Render.assemble('minute', dateObj);
+				// dateObj.minute = Simulator.getValue('minute');
+				// Render.assemble('second',dateObj);
+			},
+			onMonthChange:function(e)
+			{
+				Event.public(e.target);
+				var year  = Simulator.getValue('year');
+				var month = +Simulator.getValue('month') - 1;
+				var dateObj = 
+				{	
+					year : year,
+					month : month,
+					date : 1,
+					hour:0,
+					minute:0,
+					second:0
+				}
+				Render.assemble('date',dateObj);
+				//Render.assemble('hour',dateObj);
+				//dateObj.hour = Simulator.getValue('hour');
+				//Render.assemble('minute', dateObj);
+			},
+			onDateChange:function(e)
+			{
+				if(this.public(e.target) != false)
+				{
+					var year = Simulator.getValue('year');
+					var month = Simulator.getValue('month') - 1;
+					var date = Simulator.getValue('date');
+					var dateObj = 
+					{
+						year : year,
+						month : month,
+						date : date,
+						hour : 0,
+						minute:0,
+						second:0
+					}
+				}
+			},
+			onHourChange:function(e)
+			{
+				if(this.public(e.target) != false)
+				{
+					var year = Simulator.getValue('year');
+					var month = Simulator.getValue('month') - 1;
+					var date = Simulator.getValue('date');
+					var hour = Simulator.getValue('hour');
+					var dateObj = 
+					{
+						year : year,
+						month : month,
+						date : date,
+						hour : hour,
+						minute:0,
+						second:0
+					}
+				}
+			},
+			onMinuteChange:function(e)
+			{
+				if(this.public(e.target) != false)
+				{
+					var year = Simulator.getValue('year');
+					var month = Simulator.getValue('month') -1;
+					var date = Simulator.getValue('date');
+					var hour = Simulator.getValue('hour');
+					var minute = Simulator.getValue('minute');
+					var dateObj = 
+					{
+						year : year,
+						month : month,
+						date : date,
+						hour : hour,
+						minute:minute,
+						second:0
+					}
+				}
+			},
+			onSecondChange:function(e)
+			{
+				if(this.public(e.target) != false)
+				{
+					var year = Simulator.getValue('year');
+					var month = Simulator.getValue('month') -1;
+					var date = Simulator.getValue('date');
+					var hour = Simulator.getValue('hour');
+					var minute = Simulator.getValue('minute');
+					var second = Simulator.getValue('second');
+					var dateObj = 
+					{
+						year : year,
+						month : month,
+						date : date,
+						hour : hour,
+						minute:minute,
+						second:second
+					}
+				}
+			},
+			init:function()
+			{
+				global.domSaver.year.live('change',this.onYearChange);
+				global.domSaver.month.live('change',this.onMonthChange);
+				global.domSaver.date.live('change',this.onDateChange);
+			}
+		}
+		Render.init();
+		Event.init();
+	//]]>
+</script>
+</body>
+</html>

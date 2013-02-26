@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>comment pop</title>
+	<link rel="stylesheet" type="text/css" href="./css/reset.css" media="all">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato" media="all">
+	<link rel="stylesheet" type="text/css" href="./css/common.css" media="all">
+	<link rel="stylesheet" type="text/css" href="./css/index.css" media="all">
+	<link rel="stylesheet" type="text/css" href="./css/ui_common.css" media="all">
+	<link rel="stylesheet" type="text/css" href="./css/add_edit_user.css" media="all">
+	<link rel="stylesheet" type="text/css" href="./css/pop_comment.css" media="all">
+</head>
+<body>
+	<div class="popup pop-box pop-add-comment">
+		<div class="pop-head g-top">
+			<span class="ui-icon ui-icon-add-item"></span>
+				<h3>New comment item</h3>
+				<span class="tips-close">
+					<span class="ui-icon-tips tips">tips</span>
+					<span class="ui-icon-close close">close box</span>
+				</span>
+		</div>
+		<div class="pop-cont">
+			<ul class="edit-items fn-clear">
+				<li class="edit-item ui-form-error">
+					<label for="username" class="field-name">username</label>
+					<div class="field-val">
+						<input id="username" type="text" class="ui-input-text ui-w-255">
+						<span class="form-tips">*Please correct the error</span>
+					</div>
+				</li>
+				<li class="edit-item">
+					<label for="username" class="field-name">comment</label>
+					<div class="field-val">
+						<textarea class="ui-textarea ui-w-255"></textarea>
+						<span class="form-tips">*Please correct the error</span>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="pop-panel">
+			<a href="#" class="ui-btn btn-add">add</a>
+		</div>
+	</div>
+<script src="./js/jquery-1.8.0.min.js"></script>
+<script src="./js/ui_common.js"></script>
+</body>
+</html>

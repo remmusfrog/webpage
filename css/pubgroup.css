@@ -1,0 +1,105 @@
+.pub-f-table .pubgroup
+{
+	width: 120px;
+	margin-left: 18px;
+}
+.pub-f-table .channels
+{
+	width: 100px; 
+}
+.pub-f-table .twitter-txt
+{
+	width: 130px;
+}
+.pub-f-table .facebook-txt
+{
+	width: 130px;
+}
+.pub-f-table .linkedin-txt
+{
+	width: 130px;
+}
+.pub-f-table .post
+{
+	width: 50px;
+}
+.pub-f-table .channels img
+{
+	float: left;
+	display: block;
+	overflow: hidden;
+	margin-right: 5px;
+	margin-top: 4px;
+}
+.pub-f-table .post .icon-arrow {
+	display: inline-block;
+	border: 4px solid black;
+	font-size: 0;
+	height: 0;
+	padding: 0;
+	float: none;
+	margin-left: 5px;
+	border-color: transparent transparent transparent black;
+	vertical-align: middle;
+	cursor: pointer;
+}
+.ui-no-bd-bd
+{
+	border:none;
+	background: none;
+}
+.pub-f-t-head
+{
+	border-top: none;
+}
+.pub-v-f-head
+{
+	padding:0;
+	height: 1%;
+	margin-bottom: 10px;
+}
+.pub-v-f-head .ui-icon-pubgroup
+{
+	width: 24px;
+	height: 24px;
+	margin-right: 5px;
+	display: inline-block;
+	vertical-align: middle;
+	background: url(../images/icon_list_24x24.png) -1276px 1px no-repeat;
+}
+.pub-v-f-head .tips
+{
+	margin:10px 0 0 0;
+}
+.pub-f-table
+{
+	height: 1%;
+}
+.ui-btn
+{
+	display: inline-block;
+	font: 10px Lato, sans-serif;
+	font-size: 10px;
+	color: #424242;
+	text-align: center;
+	padding: 0 10px;
+	height: 23px;
+	line-height: 23px;
+	text-decoration: none;
+	border: 1px solid #787878;
+	border: 1px solid rgba(120, 120, 120, .72);
+	background: #F1F1F1;
+	background: -webkit-gradient(linear,left top, left bottom, from(#FFF), to(#F1F1F1));
+	background: -moz-linear-gradient(top,#FFF,#F1F1F1);
+	background: -o-linear-gradient(top,#FFF,#F1F1F1);
+	background: -ms-linear-gradient(top,#FFF,#F1F1F1);
+	border-radius: 4px;
+	cursor: pointer;
+	vertical-align: middle;
+}
+.pub-new-btn
+{
+	width: 60px;
+	float: right;
+	margin:5px 15px 0 0;
+}

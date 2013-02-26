@@ -1,0 +1,570 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Social inbox</title>
+	<link rel="stylesheet" type="text/css" href="./css/reset.css" media="all">
+	<!-- <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato" media="all"> -->
+	<link rel="stylesheet" type="text/css" href="./css/ui_common.css" media="all">
+	<link rel="stylesheet" type="text/css" href="./css/common.css" media="all">
+	<link rel="stylesheet" href="./css/table.css" media="all">
+	<link rel="stylesheet" href="./css/inbox.css" media="all">
+	<!--[if IE]> <link rel="stylesheet" type="text/css" href="./css/ie7.css" media="all"> <![endif]-->
+</head>
+<body>
+	<div class="main">
+		<div class="header">
+			<!-- login state -->
+			<div class="login-reg">
+				<a href="#">logout</a>
+				<a href="#">contact</a>
+			</div>
+			<div class="top fn-clear">
+					<!-- logo image -->
+					<a href="#" class="logo">socialsense logo</a>
+					<!-- top navigation -->
+					<ul class="nav" id="header-nav">
+						<li class="on">
+							<a href="#" class="icon-home"><i></i><span>home</span></a>
+						</li>
+						<li>
+							<a href="#" class="icon-inbox"><i></i><span>inbox</span></a>
+						</li>
+						<li>
+							<a href="#" class="icon-publish"><i></i><span>publish</span></a>
+						</li>
+						<li>
+							<a href="#" class="icon-feeds"><i></i><span>feeds</span></a>
+						</li>
+						<li>
+							<a href="#" class="icon-connect"><i></i><span>connections</span></a>
+						</li>						
+						<li>
+							<a href="#" class="set"><i></i><span>settings</span></a>
+						</li>
+						<li class="last" id="back-office">
+							<a href="#" class="back-office"><i></i><span>back office</span></a>
+						</li>
+					</ul>
+					<!-- search box -->
+					<div class="search"><input type="text" class="ui-input-text" /><a class="search-btn">search</a></div>
+					<!-- compose btn -->
+					<a href="#" class="compose" id="compose">compose</a>
+			</div>
+			<!-- notice center -->
+			<div class="notice-center fn-clear">
+					<span class="news">Richard van Hooijdonk | MarketingMonday</span>
+					<a href="#" class="mail"><em class="ui-icon-message-num">10</em></a>
+					<a href="#" class="message"></a>
+					<a href="#" class="refresh"></a>
+					<div class="ui-select ui-zIndex-30">
+						<input type="hidden" value="2" class="input-hidden" />
+						<div class="ui-select-head"><b class="val">group</b><span class="arrow">more</span></div>
+						<ul>
+							<li data-value="0">Apple Feeds</li>
+							<li data-value="1">Animal</li>
+							<li data-value="2">Babes &amp; Boobs</li>
+							<li data-value="3">Cars</li>
+						</ul>
+					</div>
+					<a href="#" class="btn">btn</a>
+			</div>
+		</div>
+		<!-- 主体内容区 -->
+		<div class="content-wrap">
+			<!-- 侧边导航 menu -->
+			<div id="menu">
+				<!-- home -->
+				<ul class="nav current fn-clear" id="nav-home">
+					<li class="on"><a href="#" class="icon-dashboard"><i class="icon">dashboard</i><span class="name">dashboard</span></a></li>
+					<li><a href="#" class="icon-rapportage"><i class="icon">rapportage</i><span class="name">rapportage</span></a></li>
+					<li><a href="#" class="icon-activiteiten"><i class="icon">activiteiten</i><span class="name">activiteiten</span></a></li>
+				</ul>
+				<!-- inbox -->
+				<ul class="nav fn-clear">
+					<li class="on"><a href="#" class="icon-inbox"><i class="icon">smart inbox</i><span class="name">smart inbox</span></a></li>
+					<li><a href="#" class="icon-buzz"><i class="icon">buzz</i><span class="name">buzz</span></a></li>
+					<li><a href="#" class="icon-feedback"><i class="icon">feedback</i><span class="name">feedback</span></a></li>
+					<li><a href="#" class="icon-archive"><i class="icon">archief</i><span class="name">archief</span><em class="ui-icon-message-num ui-archive-pos">10</em></a></li>
+					<li class="last"><a href="#" class="icon-task"><i class="icon">tasks</i><span class="name">tasks</span></a></li>
+				</ul>
+				<!-- publish -->
+				<ul class="nav fn-clear">
+					<li class="on"><a href="#" class="icon-pub"><i class="icon">publications</i><span class="name">publications</span></a></li>
+					<li><a href="#" class="icon-scheduled"><i class="icon">schedule</i><span class="name">schedule</span></a></li>
+					<li><a href="#" class="icon-media"><i class="icon">media</i><span class="name">media</span></a></li>
+					<li><a href="#" class="icon-feedback"><i class="icon">feedback</i><span class="name">feedback</span></a></li>
+					<li class="last"><a href="#" class="icon-task"><i class="icon">tasks</i><span class="name">tasks</span></a></li>
+				</ul>
+				<!-- connections -->
+				<ul class="nav fn-clear">
+					<li class="on"><a href="#" class="icon-connect"><i class="icon">connections</i><span class="name">connections</span></a></li>
+					<li><a href="#" class="icon-easy-connect"><i class="icon">easy connect</i><span class="name">easy connect</span></a></li>
+					<li class="last"><a href="#" class="icon-discover"><i class="icon">discover</i><span class="name">discover</span></a></li>
+				</ul>
+				<!-- team -->
+				<ul class="nav fn-clear">
+					<li class="on"><a href="#" class="icon-t-overview"><i class="icon">team overview</i><span class="name">team overview</span></a></li>
+					<li><a href="#" class="icon-member"><i class="icon">members</i><span class="name">members</span></a></li>
+					<li class="last"><a href="#" class="icon-task"><i class="icon">tasks</i><span class="name">tasks</span></a></li>
+				</ul>
+				<!-- feed -->
+				<ul class="nav fn-clear">
+					<li class="on"><a href="#" class="icon-subs"><i class="icon">subscriptions</i><span class="name">subscriptions</span></a></li>
+					<li><a href="#" class="icon-f-agent"><i class="icon">feed agent</i><span class="name">feed agent</span></a></li>
+					<li><a href="#" class="icon-c-search"><i class="icon">content search</i><span class="name">content search</span></a></li>
+					<li class="last"><a href="#" class="icon-lib"><i class="icon">library</i><span class="name">library</span></a></li>
+				</ul>
+				<!-- setting -->
+				<ul class="nav fn-clear">
+					<li class="on"><a href="#" class="icon-easy-connect"><i class="icon">connect</i><span class="name">connect</span></a>
+						<dl>
+							<dd><a href="#">facebook</a></dd>
+							<dd class="selected"><a href="#">twitter</a></dd>
+							<dd><a href="#">linkedin</a></dd>
+							<dd><a href="#">hyves</a></dd>
+							<dd><a href="#">general</a></dd>
+						</dl>
+					</li>
+					<li class="over-dd"><a href="#" class="icon-my-account"><i class="icon">account</i><span class="name">account</span></a>
+						<dl>
+							<dd><a href="#">facebook</a></dd>
+							<dd><a href="#">twitter</a></dd>
+							<dd><a href="#">linkedin</a></dd>
+							<dd><a href="#">hyves</a></dd>
+							<dd><a href="#">general</a></dd>
+						</dl>
+					</li>
+					<li><a href="#" class="icon-groepen"><i class="icon">groups</i><span class="name">groups</span></a></li>
+					<li class="last"><a href="#" class="icon-package"><i class="icon">package</i><span class="name">package</span></a></li>
+				</ul>
+				<!-- backoffice -->
+				<ul class="nav fn-clear">
+					<li class="on"><a href="#" class="icon-dashboard"><i class="icon">dashboard</i><span class="name">dashboard</span></a></li>
+					<li><a href="#" class="icon-account"><i class="icon">accounts</i><span class="name">accounts</span></a></li>
+					<li><a href="#" class="icon-package"><i class="icon">packages</i><span class="name">packages</span></a></li>
+					<li><a href="#" class="icon-g-setting"><i class="icon">global settings</i><span class="name">global settings</span></a></li>
+					<li><a href="#" class="icon-h-system"><i class="icon">help system</i><span class="name">help system</span></a></li>
+					<li><a href="#" class="icon-translation"><i class="icon">translations</i><span class="name">translations</span></a></li>
+					<li class="last"><a href="#" class="icon-noti"><i class="icon">notifications</i><span class="name">notifications</span><em class="ui-icon-message-num ui-archive-pos">10</em></a></li>
+				</ul>
+			</div>
+			<div class="content fn-clear" id="content">
+					<!-- socialinbox -->
+				<div class="g-top fn-clear">
+					<span class="ui-icon ui-icon-feedback"></span>
+					<h3><b>SOCIAL</b>INBOX</h3>
+					<div class="tips-close">
+						<div class="ui-select ui-zIndex-10">
+							<input type="hidden" class="input-hidden" />
+							<div class="ui-select-head"><b class="val">conversations</b><span class="arrow">more</span></div>
+							<ul>
+								<li data-value="0">Apple Feeds</li>
+								<li data-value="1">Animal</li>
+								<li data-value="2">Babes &amp; Boobs</li>
+								<li data-value="3">Cars</li>
+							</ul>
+						</div>
+						<span class="ui-icon-tips tips">tips</span>
+					</div>
+				</div>
+				<div class="social-inbox fn-clear">
+					<div class="lt">
+						<ul class="message-list ui-loading fn-clear" id="fn-msg-list">
+							<li class="msg-item">
+								<a href="#"><img src="./temp/pic_58x58.png" alt="" class="avatar"></a>
+								<div class="detail">
+									<h3><span class="author">Pete Cashmore</span> <span>by:</span><a href="#">@mashable</a>
+									<span class="pub-time">
+										<span class="follow"></span>
+										<span class="time">published: <em>1 min ago</em></span>
+										<span>on:</span>
+										<span class="ui-icon ui-sns-icon ui-sns-16-icon ui-sns-16-icon-twitter"></span>
+										<span class="ui-icon ui-sns-icon ui-sns-16-icon ui-sns-16-icon-linkedin"></span>
+										<span class="ui-icon ui-sns-icon ui-sns-16-icon ui-sns-16-icon-facebook"></span>
+										<span class="ui-icon ui-sns-icon ui-sns-16-icon ui-sns-16-icon-g-plus"></span>
+									</span>
+									</h3>
+									<h4>RT: ThrCereamtethods used by KLM to boost consumer involvement</h4>
+									<p>dssd</p>
+									<div class="panel">
+										<span class="reply"></span>
+										<span class="follow"></span>
+										<span class="like">15</span>
+										<span class="link"></span>
+									</div>
+								</div>
+								<!-- comment -->
+								<div class="comment">
+									<div class="top ui-s-loading">
+										<a href="">see all 4 comments</a>
+									</div>
+									<ul class="c-list">
+										<li class="c-item">
+											<img src="./temp/pic_35x35_2.png" alt="xxx" class="c-avatar">
+											<h3>oanne de Vries <span>by:</span><a href="#">@mashable</a>
+											<span class="pub-time">
+												<span class="follow"></span>
+												<span class="time">published: <em>1 min ago</em></span>
+												<span>on:</span>
+												<span class="ui-icon ui-sns-icon ui-sns-16-icon ui-sns-16-icon-twitter"></span>
+												<span class="ui-icon ui-sns-icon ui-sns-16-icon ui-sns-16-icon-linkedin"></span>
+												<span class="ui-icon ui-sns-icon ui-sns-16-icon ui-sns-16-icon-facebook"></span>
+												<span class="ui-icon ui-sns-icon ui-sns-16-icon ui-sns-16-icon-g-plus"></span>
+											</span>
+											</h3>
+											<p>Beautiful!!!!</p>
+											<div class="panel">
+												<span class="reply"></span>
+												<span class="follow"></span>
+												<span class="like">15</span>
+												<span class="link"></span>
+											</div>
+										</li>
+									</ul>
+									<div class="quote-box"><span class="ui-btn">quote</span></div>
+									<div class="c-reply" data-uname="Frank">
+										<img src="./temp/pic_35x35.png" alt="xxx" class="c-avatar">
+										<textarea class="ui-textarea"></textarea>
+										<div class="btns fn-clear"><span class="ui-btn ui-add-btn">
+												<span class="txt">add</span>
+												<span class="btn">add</span></span>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="msg-item">
+								<a href="#"><img src="./temp/pic_58x58_2.png" alt="" class="avatar"></a>
+								<div class="detail">
+									<h3><span class="author">Frank Watching</span> <a href="#">@mashable</a>
+									<span class="pub-time">
+										<span class="time">1 min ago</span>
+										<span class="ui-icon ui-sns-icon ui-sns-16-icon ui-sns-16-icon-linkedin"></span>
+									</span>
+									</h3>
+									<p>Dank je voor het volgen! Stuur gerust een bericht of DM als we je ergens mee kunnen helpen! Het Frankwatching team <a href="#">http://bit.ly/eIG7A5</a></p>
+									<div class="panel">
+										<span class="reply"></span>
+										<span class="follow"></span>
+										<span class="like">15</span>
+										<span class="link"></span>
+									</div>
+								</div>
+								<div class="panel">
+									<span class="reply"></span>
+									<span class="follow"></span>
+									<span class="like">15</span>
+									<span class="link"></span>
+								</div>
+								<!-- comment -->
+								<div class="comment">
+									<div class="top">
+										<a href="">see all 4 comments</a>
+									</div>
+									<ul class="c-list">
+										<li class="c-item">
+											<img src="./temp/pic_35x35_2.png" alt="xxx" class="c-avatar">
+											<h3>oanne de Vries</h3>
+											<p>Beautiful!!!!</p>
+											<div class="panel">
+												<span class="reply"></span>
+												<span class="follow"></span>
+												<span class="like">15</span>
+												<span class="link"></span>
+											</div>
+										</li>
+									</ul>
+									<div class="c-reply" data-uname="Frank">
+											<img src="./temp/pic_35x35.png" alt="xxx" class="c-avatar">
+											<textarea class="ui-textarea"></textarea>
+											<div class="btns">
+												<span class="ui-btn ui-add-btn">
+													<span class="txt">add</span>
+													<span class="btn">add</span>
+												</span>
+											</div>
+									</div>
+								</div>
+							</li>
+							<li class="msg-item">
+								<a href="#"><img src="./temp/pic_58x58_3.png" alt="" class="avatar"></a>
+								<div class="detail">
+									<h3><span class="author">Iberico House Sounds</span> <a href="#">@IbericoHt</a> <a href="#">retweet by @Arthur</a>
+									<span class="pub-time">
+										<span class="time">1 min ago</span>
+										<span class="ui-icon ui-sns-icon ui-sns-16-icon ui-sns-16-icon-facebook"></span>
+									</span>
+									</h3>
+									<p>Good news for Android users: you can now browse Facebook at twice the speed <a href="#">http://on.mash.to/W9Df9C</a> 
+									</p>
+									<div class="imgs">
+										<a href="#"><img src="./temp/pic_50x50_1.png" alt="xxx"></a>
+										<a href="#"><img src="./temp/pic_50x50_2.png" alt="xxx"></a>
+										<a href="#"><img src="./temp/pic_50x50_3.png" alt="xxx"></a>
+										<a href="#"><img src="./temp/pic_50x50_4.png" alt="xxx"></a>
+										<a href="#"><img src="./temp/pic_50x50_5.png" alt="xxx"></a>
+										<a href="#"><img src="./temp/pic_50x50_6.png" alt="xxx"></a>
+										<a href="#"><img src="./temp/pic_50x50_7.png" alt="xxx"></a>
+										<a href="#"><img src="./temp/pic_50x50_8.png" alt="xxx"></a>
+										<a href="#"><img src="./temp/pic_50x50_9.png" alt="xxx"></a>
+										<a href="#"><img src="./temp/pic_50x50_10.png" alt="xxx"></a>
+									</div>
+									<div class="panel">
+										<span class="reply"></span>
+										<span class="follow"></span>
+										<span class="like">15</span>
+										<span class="link"></span>
+									</div>
+								</div>
+								<div class="panel">
+									<span class="reply"></span>
+									<span class="follow"></span>
+									<span class="like">15</span>
+									<span class="link"></span>
+								</div>
+								<!-- comment -->
+								<div class="comment">
+									<div class="top">
+										<a href="">see all 4 comments</a>
+									</div>
+									<ul class="c-list">
+										<li class="c-item">
+											<img src="./temp/pic_35x35_2.png" alt="xxx" class="c-avatar">
+											<h3>oanne de Vries</h3>
+											<p>Beautiful!!!!</p>
+											<div class="panel">
+												<span class="reply"></span>
+												<span class="follow"></span>
+												<span class="like">15</span>
+												<span class="link"></span>
+											</div>
+										</li>
+									</ul>
+									<div class="c-reply" data-uname="Frank">
+											<img src="./temp/pic_35x35.png" alt="xxx" class="c-avatar">
+											<textarea class="ui-textarea"></textarea>
+											<div class="btns">
+												<span class="ui-btn ui-add-btn">
+													<span class="txt">add</span>
+													<span class="btn">add</span>
+												</span>
+											</div>
+									</div>
+								</div>
+							</li>
+							<li class="msg-item last">
+								<a href="#"><img src="./temp/pic_58x58_5.png" alt="" class="avatar"></a>
+								<div class="detail">
+									<h3><span class="author">Designboom</span> <a href="#">@mashable</a>
+									<span class="pub-time">
+										<span class="time">1 min ago</span>
+										<span class="ui-icon ui-sns-icon ui-sns-16-icon ui-sns-16-icon-linkedin"></span>
+									</span>
+									</h3>
+									<p>360 degree christmas book panorama by yusuke oono the three-dimensional panoramic structure references the format of a book and pushes it to become a new, expansive platform for narrative and story-telling. Read more: <a href="#">http://www.designboom.com/art/360-degree-christmas-book-panorama-by-yusuke-oono/</a> We're bringing back the summer!</p>
+									<div class="panel">
+										<span class="reply"></span>
+										<span class="follow"></span>
+										<span class="like">15</span>
+										<span class="link"></span>
+									</div>
+								</div>
+								<div class="panel">
+									<span class="reply"></span>
+									<span class="follow"></span>
+									<span class="like">15</span>
+									<span class="link"></span>
+								</div>
+								<!-- comment -->
+								<div class="comment">
+									<div class="top">
+										<a href="">see all 4 comments</a>
+									</div>
+									<ul class="c-list">
+										<li class="c-item">
+											<img src="./temp/pic_35x35_2.png" alt="xxx" class="c-avatar">
+											<h3>oanne de Vries</h3>
+											<p>Beautiful!!!!</p>
+											<div class="panel">
+												<span class="reply"></span>
+												<span class="follow"></span>
+												<span class="like">15</span>
+												<span class="link"></span>
+											</div>
+										</li>
+									</ul>
+									<div class="c-reply" data-uname="Frank">
+											<img src="./temp/pic_35x35.png" alt="xxx" class="c-avatar">
+											<textarea class="ui-textarea"></textarea>
+											<div class="btns">
+												<span class="ui-btn ui-add-btn">
+													<span class="txt">add</span>
+													<span class="btn">add</span>
+												</span>
+											</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<!-- right filter -->
+					<div class="rt">
+						<ul class="inbox-filter" id="inbox-filter">
+							<!-- group conversations -->
+							<li class="inbox-f-item group-dizzy">
+								<h3 class="head">
+									<span class="icon icon-group"></span>Group Conversations
+									<span class="desc">Listening on channels / pages</span>
+								</h3>
+								<div class="box">
+									<div class="top">
+										<span class="ui-icon-arrow"></span>
+										<span class="line"></span>
+									</div>
+									<div class="mid">
+										<div class="ui-table">
+											<div class="table-head fn-clear">
+												<span class="tb-item sns"></span>
+												<span class="tb-item user">user</span>
+												<span class="tb-item page">page</span>
+											</div>
+											<ul class="table-con" id="fn-group">
+												<li class="con-list-item fn-clear" data-id="0">
+													<span class="tb-item sns">
+														<span class="ui-sns-icon ui-sns-16-icon ui-sns-16-icon-facebook"></span>
+													</span>
+													<span class="tb-item user">JeanetteB</span>
+													<span class="tb-item page">MM</span>
+													<span class="tb-item checkbox"><input type="checkbox" value="0"/></span>
+												</li>
+												<li class="con-list-item fn-clear" data-id="1">
+													<span class="tb-item sns">
+														<span class="ui-sns-icon ui-sns-16-icon ui-sns-16-icon-twitter"></span>
+													</span>
+													<span class="tb-item user">JeanetteB</span>
+													<span class="tb-item page">MM</span>
+													<span class="tb-item checkbox"><input type="checkbox" checked="checked" value="3"/></span>
+												</li>
+												<li class="con-list-item fn-clear" data-id="2">
+													<span class="tb-item sns">
+														<span class="ui-sns-icon ui-sns-16-icon ui-sns-16-icon-linkedin"></span>
+													</span>
+													<span class="tb-item user">JeanetteB</span>
+													<span class="tb-item page">MM</span>
+													<span class="tb-item checkbox"><input type="checkbox" checked="checked" value="2"/></span>
+												</li>
+												<li class="con-list-item fn-clear" data-id="3">
+													<span class="tb-item sns">
+														<span class="ui-sns-icon ui-sns-16-icon ui-sns-16-icon-g-plus"></span>
+													</span>
+													<span class="tb-item user">JeanetteB</span>
+													<span class="tb-item page">MM</span>
+													<span class="tb-item checkbox"><input type="checkbox" value="1" /></span>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</li>
+							<!-- filter interactions -->
+							<li class="inbox-f-item filter-interactions">
+								<h3 class="head">
+									<span class="icon icon-inter"></span>Filter interactions
+								</h3>
+								<div class="box">
+									<div class="top">
+										<span class="ui-icon-arrow"></span>
+										<span class="line"></span>
+									</div>
+									<div class="mid">
+										<ul class="filter-i-list" id="fn-filter-list">
+											<li class="filter-i-item" data-id="f-a" data-filtertype="4">
+												<label><input type="checkbox">mentions / incoming posts</label>
+											</li>
+											<li class="filter-i-item" data-id="f-b" data-filtertype="7">
+												<label><input type="checkbox">reposts / retweets</label>
+											</li>
+											<li class="filter-i-item" data-id="f-c" data-filtertype="9">
+												<label><input type="checkbox">likes</label>
+											</li>
+											<li class="filter-i-item not-type-one"><p>must have</p></li>
+											<li class="filter-i-item not-type-one">
+												<label><input type="checkbox">link</label>
+											</li>
+											<li class="filter-i-item not-type-one">
+												<label><input type="checkbox">media (photo/video)</label>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<!-- keyword search -->
+							<li class="inbox-f-item keyword-search">
+								<h3 class="head">
+									<span class="icon icon-search"></span>Keyword search
+								</h3>
+								<div class="box">
+									<div class="top">
+										<span class="ui-icon-arrow"></span>
+										<span class="line"></span>
+									</div>
+									<div class="mid">
+										<div class="ui-select ft-sel ui-zIndex-20">
+											<input type="hidden" value="3" class="input-hidden" />
+											<div class="ui-select-head"><b class="val">or has</b><span class="arrow">more</span></div>
+											<ul>
+												<li data-value="0">Apple Feeds</li>
+												<li data-value="1">Animal</li>
+												<li data-value="2">Babes &amp; Boobs</li>
+												<li data-value="3">Cars</li>
+											</ul>
+										</div>
+										<ul class="keyword" id="fn-keywords">
+											<li class="keyword-item" data-id="k-a" data-OwnKeywordId="4">
+												<span class="txt">Pony</span>
+												<span class="ui-icon ui-icon-delete"></span>
+											</li>
+											<li class="keyword-item" data-id="k-b" data-OwnKeywordId="56">
+												<span class="txt">Horse</span>
+												<span class="ui-icon ui-icon-delete"></span>
+											</li>
+											<li class="keyword-item" data-id="k-c" data-OwnKeywordId="8">
+												<span class="txt">Gelding</span>
+												<span class="ui-icon ui-icon-delete"></span>
+											</li>
+										</ul>
+										<input type="text" class="ui-input-text" id="fn-input-text">
+										<div class="btn-box">
+											<span class="ui-btn ui-add-btn size-s" id="fn-add-keyword">
+												<span class="txt">add</span>
+												<span class="btn">add</span>
+											</span>
+										</div>
+										<p class="scd-tit">include in inbox if the message has</p>
+										<div class="ui-select ui-zIndex-20">
+											<input type="hidden" value="3" class="input-hidden" />
+											<div class="ui-select-head"><b class="val">these keywords</b><span class="arrow">more</span></div>
+											<ul>
+												<li data-value="0">Apple Feeds</li>
+												<li data-value="1">Animal</li>
+												<li data-value="2">Babes &amp; Boobs</li>
+												<li data-value="3">Cars</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<div class="save-box">
+							<span class="ui-btn" id="fn-save">save filter</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="./js/jquery-1.8.0.min.js"></script>
+	<script src="./js/ui_common.js"></script>
+	<script src="./js/inbox.js"></script>
+</body>
+</html>

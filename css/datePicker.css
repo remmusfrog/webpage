@@ -1,0 +1,124 @@
+﻿    body
+	{
+		padding: 50px 0 0 50px;
+	}
+	.datepicker
+	{
+		border:1px solid #ccc;
+		border-radius: 8px;
+		width: 326px;
+		box-shadow: 2px 5px 17px #666;
+	}
+	.datepicker .head-title
+	{
+		color:#797979;
+		font-size: 16px;
+		line-height: 35px;
+		padding: 0 15px;
+		border-bottom: 2px solid #d6d6d6;
+	}
+	.datepicker .containerfordate
+	{
+		padding: 0 15px;
+
+	}
+	#pre-month, #next-month, .year-month-container
+	{
+		width: 46px;
+		float: left;
+		text-align: center;
+		cursor: pointer;
+		font-size: 16px;
+		line-height: 32px;
+		color:#828283;
+		font-size: 16px;
+	}
+	#pre-month, #next-month
+	{
+		text-indent:-9999px;
+		background: url(../images/icon_date_pre.png) center center no-repeat;
+	}
+	#next-month
+	{
+		background: url(../images/icon_date_next.png) center center no-repeat;
+	}
+	.year-month-container
+	{
+		width: 204px;
+	}
+	.next-month
+	{
+		float: right;
+	}
+	.date-container
+	{
+
+		border: 1px solid #f1f1f1;
+		border-top: none;
+	}
+	.date-container span
+	{
+		width: 40px;
+		color:#797979;
+		border:1px solid #f1f1f1;
+		font-size: 14px;
+		font-weight: 700;
+		float: left;
+		text-align: center;
+		line-height: 26px;
+	}
+	.date-container .current
+	{
+		color:#1c7ee4;
+		background: #c0edfd;
+	}
+	.date-container .disabled
+	{
+		color:#D6D6D6;
+		background: #f7f7f7;
+	}
+	.week-title
+	{
+		margin-top: 5px;
+ 		border: 1px solid #F1F1F1;
+ 		border-width: 0 1px;
+	}
+	.week-title span
+	{
+	
+		width: 42px;
+		color:black;
+		font-size: 16px;
+		line-height: 20px;
+		background: #e4e4e4;
+		float: left;
+		text-align: center;
+		text-transform: capitalize;
+	}
+	.week-title .week-end
+	{
+		background: #F1F1F1;
+	}
+	.select-today
+	{
+		text-align: center;
+		line-height: 40px;
+		color: #1c7ee4;
+		font-size: 16px;
+	}
+	.select-today span
+	{
+		cursor: pointer;
+		text-transform: capitalize;
+	}
+	#minute-container, #hour-container, .seperator
+	{
+		float: right;
+		line-height: 21px;
+		margin-top: 7px;
+	}
+	 .seperator
+	 {
+	 	width: 25px;
+	 	text-align: center;
+	 }

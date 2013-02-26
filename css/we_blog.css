@@ -1,0 +1,157 @@
+.we-blog
+{
+	width: 636px;
+	margin: 0 auto;
+	color: #424242;
+}
+.we-blog .top
+{
+	text-align: center;
+	background: none;
+	margin-bottom: 15px;
+}
+.we-blog .side
+{
+	float: left;
+	width: 100px;
+}
+.we-blog .blog-cont
+{
+	float: right;
+	width: 480px;
+}
+.we-blog .side-info
+{
+	float: left;
+	font-size: 10px;
+}
+.we-blog .side-info li
+{
+	float: left;
+	display: inline;
+	width: 100%;
+	line-height: 14px;
+	margin-bottom: 5px;
+}
+.we-blog .side-info .ui-icon
+{
+	width: 12px;
+	height: 14px;
+	margin-right: 4px;
+	background: url(../images/icon_weblog.png) left center no-repeat;
+}
+.we-blog .side-info .date
+{
+	background-position: 1px 0px;
+}
+.we-blog .side-info .author
+{
+	background-position: 0 -18px;
+}
+.blog-txt h1
+{ 
+	font-size: 18px;
+	font-weight: 500;
+}
+.blog-txt p
+{
+	font-size: 11px;
+	color: #000;
+	line-height: 1.54;
+	margin-bottom: 10px;
+}
+.blog-txt p img
+{
+	float: left;
+	margin-right: 10px;
+}
+.share-tools
+{
+	margin-bottom: 10px;
+}
+.comment
+{
+	border: 1px solid #828282;
+}
+.comment .head
+{
+	height: 29px;
+	line-height: 29px;
+	padding: 0 9px;
+}
+.comment .head .ui-icon
+{
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	vertical-align: middle;
+	background: url(../images/icon_weblog.png) 0 -43px no-repeat;
+	margin-right: 5px;
+}
+.comment .head a
+{
+	font-weight: 500;
+	font-size: 10px;
+	color: #000;
+	text-decoration: underline;
+}
+.comment .head a em
+{
+	font-style: normal;
+	font-weight: 500;
+}
+.comment-list li, .comment-box
+{
+	display: block;
+	position: relative;
+	padding: 4px 0 4px 48px;
+	min-height: 30px;
+	border-top: 1px solid #828282;
+}
+.comment-list li .avator, .comment-box .avator
+{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	left: 9px;
+	top: 4px;
+}
+.comment-list 
+{
+	display: block;
+	width: 100%;
+}
+.comment-list li h3
+{
+	font-size: 10px;
+	color: #828282;
+}
+.comment-list li p
+{
+	color: #000;
+	font-size: 11px;
+	line-height: 1.4;
+}
+.comment-box .ui-textarea
+{
+	width: 405px;
+	height: 54px;
+	overflow: auto;
+	white-space: normal;
+	word-break:break-all;
+}
+.comment-box .panel
+{
+	text-align: right;
+	padding: 5px 8px 0 0;
+}
+.comment-box .panel .ui-btn
+{
+	width: 53px;
+	height: 20px;
+	line-height: 20px;
+}
+.nav-page
+{
+	margin: 10px auto;
+}

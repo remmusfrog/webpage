@@ -1,0 +1,421 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>New Publication</title>
+	<link rel="stylesheet" type="text/css" href="./css/reset.css" media="all">
+	<!-- <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato" media="all"> -->
+	<link rel="stylesheet" type="text/css" href="./css/ui_common.css" media="all">
+	<link rel="stylesheet" type="text/css" href="./css/common.css" media="all">
+	<link rel="stylesheet" type="text/css" href="./css/index.css" media="all">
+	<link rel="stylesheet" type="text/css" href="./css/index_icon.css" media="all">
+	<link rel="stylesheet" type="text/css" href="./css/new_publication.css" media="all">
+	<link rel="stylesheet" type="text/css" href="./css/quick_publish.css" media="all">
+</head>
+<body>
+	<div class="main">
+		<div class="header">
+			<!-- login state -->
+			<div class="login-reg">
+				<a href="#">logout</a>
+				<a href="#">contact</a>
+			</div>
+			<div class="top">
+				<div class="container fn-clear">
+					<!-- logo image -->
+					<a href="#" class="logo"><img src="./images/logo.png" alt="logo"></a>
+					<!-- top navigation -->
+					<ul class="nav" id="header-nav">
+						<li class="on"><a href="#" class="icon-home">home</a></li>
+						<li class="disable"><a href="#" class="icon-publish">publish</a></li>
+						<li><a href="#" class="icon-connect">connections</a></li>
+						<li><a href="#" class="icon-pub-groups">pub groups</a></li>
+						<li><a href="#" class="icon-feeds">feeds</a></li>
+						<li><a href="#" class="set">settings</a></li>
+						<li class="last" id="back-office"><a href="#" class="back-office">back office</a></li>
+					</ul>
+					<!-- search box -->
+					<div class="search"><div class="container"><input type="text" class="ui-input-text" /><a class="search-btn">search</a></div></div>
+					<!-- compose btn -->
+					<a href="#" class="compose" id="compose">compose</a>
+				</div>
+				<div class="new-publication quick-publish">
+					<div class="quick-publish-cont">
+						<div class="g-top pub-head">
+							<span class="ui-icon ui-icon-publication">quick publication</span>
+							<h3>Quick publish in [group]</h3>
+							<a href="#" class="ui-icon-close close">close</a>
+						</div>
+						<div class="pub-cont fn-clear">
+							<div class="lt">
+								<ul class="pub-form fn-clear">
+									<li class="pub-f-item">
+										<label for="s-text" class="pub-f-label">Short text/title</label>
+										<input type="text" class="ui-input-text ui-pub-input" id="s-text"/>
+									</li>
+									<li class="pub-f-item">
+										<label for="l-text" class="pub-f-label ui-lh-0">Long text</label>
+										<textarea class="ui-textarea ui-pub-textarea" id="l-text"></textarea>
+									</li>
+									<li class="pub-f-item">
+										<label class="pub-f-label ui-lh-16">Add files from your computer</label>
+										<div class="upload-file">
+											<div class="cont">
+												<h4>Drop files here</h4>
+												<p>or</p>
+												<span class="ui-btn upload-btn">select files</span>
+											</div>
+										</div>
+									</li>
+									<li class="pub-f-item">
+										<label for="l-text" class="pub-f-label ui-lh-0">Publish in</label>
+										<div class="ui-select ui-gray-select pub-in ui-zIndex-30">
+											<input type="hidden" value="2" class="input-hidden" />
+											<div class="ui-select-head"><b class="val">group</b><span class="arrow">more</span></div>
+											<ul>
+												<li data-value="0">Apple Feeds</li>
+												<li data-value="1">Animal</li>
+												<li data-value="2">Babes &amp; Boobs</li>
+												<li data-value="3">Cars</li>
+											</ul>
+										</div>
+										<span class="ui-btn ui-gray-btn quick-pub-btn">publish</span>
+										<div class="advanced-opt"><a href="#">Advanced</a></div>
+									</li>
+								</ul>
+								<div class="toggle-pub-group"><span class="arrow up" id="fn-toggle-group"></span></div>
+								<div class="pub-group-cont" id="fn-pub-group">
+									<div class="pub-g-c-head fn-clear">
+										<span class="channel">channel</span>
+										<span class="user">user</span>
+										<span class="page">page</span>
+										<span class="sel">selected</span>
+									</div>
+									<ul class="pub-g-cont-l">
+										<li class="pub-g-c-l-item">
+											<span class="channel icon-linkedin">facebook</span>
+											<span class="user">Hans Wessel</span>
+											<span class="page">Nike Football</span>
+											<span class="sel"><input type="checkbox"></span>
+										</li>
+										<li class="pub-g-c-l-item">
+											<span class="channel">facebook</span>
+											<span class="user">Hans Wessel</span>
+											<span class="page">Nike Football</span>
+											<span class="sel"><input type="checkbox"></span>
+										</li>
+										<li class="pub-g-c-l-item">
+											<span class="channel">facebook</span>
+											<span class="user">Hans Wessel</span>
+											<span class="page">Nike Football</span>
+											<span class="sel"><input type="checkbox"></span>
+										</li>
+										<li class="pub-g-c-l-item">
+											<span class="channel">facebook</span>
+											<span class="user">Hans Wessel</span>
+											<span class="page">Nike Football</span>
+											<span class="sel"><input type="checkbox"></span>
+										</li>
+									</ul>
+								</div>
+								<div class="pub-update-set">
+									<span class="ui-btn ui-pub-btn">update settings</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- notice center -->
+			<div class="notice-center fn-clear">
+				<div class="rt">
+					<span class="news">Richard van Hooijdonk | MarketingMonday</span>
+					<a href="#" class="mail"><em class="ui-message-num">10</em></a>
+					<a href="#" class="message"></a>
+					<a href="#" class="refresh"></a>
+					<div class="ui-select ui-zIndex-30">
+						<input type="hidden" value="2" class="input-hidden" />
+						<div class="ui-select-head"><b class="val">group</b><span class="arrow">more</span></div>
+						<ul>
+							<li data-value="0">Apple Feeds</li>
+							<li data-value="1">Animal</li>
+							<li data-value="2">Babes &amp; Boobs</li>
+							<li data-value="3">Cars</li>
+						</ul>
+					</div>
+					<a href="#" class="btn">btn</a>
+				</div>
+			</div>
+		</div>
+		<!-- 主体内容区 -->
+		<div class="content-wrap fn-clear">
+			<!-- 侧边导航 -->
+			<div id="menu">
+				<!-- home -->
+				<ul class="nav current fn-clear" id="nav-home">
+					<li class="on"><a href="#" class="icon-dashboard"><i class="icon">dashboard</i><span class="name">dashboard</span></a></li>
+					<li><a href="#" class="icon-rapportage"><i class="icon">rapportage</i><span class="name">rapportage</span></a></li>
+					<li><a href="#" class="icon-activiteiten"><i class="icon">activiteiten</i><span class="name">activiteiten</span></a></li>
+				</ul>
+				<!-- publish -->
+				<ul class="nav fn-clear">
+					<li class="on"><a href="#" class="icon-pub"><i class="icon">publications</i><span class="name">publications</span></a></li>
+					<li><a href="#" class="icon-scheduled"><i class="icon">schedule</i><span class="name">schedule</span></a></li>
+					<li><a href="#" class="icon-media"><i class="icon">media</i><span class="name">media</span></a></li>
+					<li><a href="#" class="icon-feedback"><i class="icon">feedback</i><span class="name">feedback</span></a></li>
+					<li class="last"><a href="#" class="icon-task"><i class="icon">tasks</i><span class="name">tasks</span></a></li>
+				</ul>
+				<!-- connections -->
+				<ul class="nav fn-clear">
+					<li class="on"><a href="#" class="icon-connect"><i class="icon">connections</i><span class="name">connections</span></a></li>
+					<li><a href="#" class="icon-easy-connect"><i class="icon">easy connect</i><span class="name">easy connect</span></a></li>
+					<li class="last"><a href="#" class="icon-discover"><i class="icon">discover</i><span class="name">discover</span></a></li>
+				</ul>
+				<!-- team -->
+				<ul class="nav fn-clear">
+					<li class="on"><a href="#" class="icon-t-overview"><i class="icon">team overview</i><span class="name">team overview</span></a></li>
+					<li><a href="#" class="icon-member"><i class="icon">members</i><span class="name">members</span></a></li>
+					<li class="last"><a href="#" class="icon-task"><i class="icon">tasks</i><span class="name">tasks</span></a></li>
+				</ul>
+				<!-- feed -->
+				<ul class="nav fn-clear">
+					<li class="on"><a href="#" class="icon-subs"><i class="icon">subscriptions</i><span class="name">subscriptions</span></a></li>
+					<li><a href="#" class="icon-f-agent"><i class="icon">feed agent</i><span class="name">feed agent</span></a></li>
+					<li><a href="#" class="icon-c-search"><i class="icon">content search</i><span class="name">content search</span></a></li>
+					<li class="last"><a href="#" class="icon-lib"><i class="icon">library</i><span class="name">library</span></a></li>
+				</ul>
+				<!-- setting -->
+				<ul class="nav fn-clear">
+					<li class="on"><a href="#" class="icon-easy-connect"><i class="icon">connect</i><span class="name">connect</span></a>
+						<dl>
+							<dd><a href="#">facebook</a></dd>
+							<dd><a href="#">twitter</a></dd>
+							<dd><a href="#">linkedin</a></dd>
+							<dd><a href="#">hyves</a></dd>
+							<dd><a href="#">general</a></dd>
+						</dl>
+					</li>
+					<li class="over-dd"><a href="#" class="icon-my-account"><i class="icon">account</i><span class="name">account</span></a>
+						<dl>
+							<dd><a href="#">facebook</a></dd>
+							<dd><a href="#">twitter</a></dd>
+							<dd><a href="#">linkedin</a></dd>
+							<dd><a href="#">hyves</a></dd>
+							<dd><a href="#">general</a></dd>
+						</dl>
+					</li>
+					<li><a href="#" class="icon-groepen"><i class="icon">groups</i><span class="name">groups</span></a></li>
+					<li class="last"><a href="#" class="icon-package"><i class="icon">package</i><span class="name">package</span></a></li>
+				</ul>
+				<!-- backoffice -->
+				<ul class="nav fn-clear">
+					<li class="on"><a href="#" class="icon-dashboard"><i class="icon">dashboard</i><span class="name">dashboard</span></a></li>
+					<li><a href="#" class="icon-account"><i class="icon">accounts</i><span class="name">accounts</span></a></li>
+					<li><a href="#" class="icon-package"><i class="icon">packages</i><span class="name">packages</span></a></li>
+					<li><a href="#" class="icon-g-setting"><i class="icon">global settings</i><span class="name">global settings</span></a></li>
+					<li><a href="#" class="icon-h-system"><i class="icon">help system</i><span class="name">help system</span></a></li>
+					<li><a href="#" class="icon-translation"><i class="icon">translations</i><span class="name">translations</span></a></li>
+					<li class="last"><a href="#" class="icon-noti"><i class="icon">notifications</i><span class="name">notifications</span><em class="ui-icon-message-num ui-archive-pos">10</em></a></li>
+				</ul>
+			</div>
+			<div class="content fn-clear">	
+				<div class="new-publication">
+					<div class="g-top pub-head fn-clear">
+						<span class="ui-icon ui-icon-publication">quick publication</span>
+						<h3><b>new</b> publication</h3>
+						<div class="top-btns">
+							<a  href="#" class="ui-btn">revoke</a>
+							<a  href="#" class="ui-btn">publish</a>
+							<a  href="#" class="ui-btn">schedule</a>
+							<a  href="#" class="ui-btn">draft</a>
+						</div>
+						<a href="#" class="ui-icon-tips tips">tips</a>
+					</div>
+					<div class="pub-cont fn-clear">
+						<div class="lt">
+							<ul class="pub-form">
+								<li class="pub-f-item">
+									<label for="s-text" class="pub-f-label">Short text/title</label>
+									<input type="text" class="ui-input-text ui-pub-input" id="s-text"/>
+								</li>
+								<li class="pub-f-item">
+									<label for="l-text" class="pub-f-label ui-lh-16">Long text</label>
+									<textarea class="ui-textarea ui-pub-textarea" id="l-text"></textarea>
+								</li>
+								<li class="pub-f-item">
+									<label class="pub-f-label ui-lh-16">Add files from your computer</label>
+									<div class="upload-file">
+										<div class="cont">
+											<h4>Drop files here</h4>
+											<p>or</p>
+											<span class="ui-btn upload-btn">select files</span>
+										</div>
+									</div>
+									<div class="ui-clear"></div>
+								</li>
+								<li class="pub-f-item">
+									<label for="l-text" class="pub-f-label ui-lh-16">Publish in group</label>
+									<div class="pub-group-cont">
+										<div class="pub-g-c-head fn-clear">
+											<span class="channel">channel</span>
+											<span class="user">user</span>
+											<span class="page">page</span>
+											<span class="sel">selected</span>
+										</div>
+										<ul class="pub-g-cont-l">
+											<li class="pub-g-c-l-item">
+												<span class="channel">facebook</span>
+												<span class="user">Hans Wessel</span>
+												<span class="page">Nike Football</span>
+												<span class="sel"><input type="checkbox"></span>
+											</li>
+											<li class="pub-g-c-l-item">
+												<span class="channel">facebook</span>
+												<span class="user">Hans Wessel</span>
+												<span class="page">Nike Football</span>
+												<span class="sel"><input type="checkbox"></span>
+											</li>
+											<li class="pub-g-c-l-item">
+												<span class="channel">facebook</span>
+												<span class="user">Hans Wessel</span>
+												<span class="page">Nike Football</span>
+												<span class="sel"><input type="checkbox"></span>
+											</li>
+											<li class="pub-g-c-l-item">
+												<span class="channel">facebook</span>
+												<span class="user">Hans Wessel</span>
+												<span class="page">Nike Football</span>
+												<span class="sel"><input type="checkbox"></span>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+							<div class="pub-update-set">
+								<span class="ui-btn pub-btn">update settings</span>
+							</div>
+						</div>
+						<div class="rt">
+							<h3 class="feed-title">Feeds</h3>
+							<div class="usr-panel fn-clear">
+								<div class="ui-search-input feed-i-search">
+									<div class="box">
+										<input type="text" class="ui-input-text search-txt">
+									</div>
+									<span class="ui-icon-search search-btn">search button</span>
+								</div>
+								<div class="ui-select feed-i-filter ui-zIndex-30">
+									<input type="hidden" value="2" class="input-hidden" />
+									<div class="ui-select-head"><b class="val">All feeds</b><span class="arrow">more</span></div>
+									<ul>
+										<li data-value="0">Apple Feeds</li>
+										<li data-value="1">Animal</li>
+										<li data-value="2">Babes &amp; Boobs</li>
+										<li data-value="3">Cars</li>
+									</ul>
+								</div>
+							</div>
+							<div class="feed-s-result">
+								<ul class="feed-s-r-list">
+									<li class="feed-s-r-l-item fn-clear">
+										<h3>Google rolls out on-site</h3> <p>recommendation for +1 buttonSource: Technology feed</p>
+										<div class="panel">
+											<span class="ui-btn use-btn">use</span>
+										</div>
+									</li>
+									<li class="feed-s-r-l-item fn-clear">
+										<h3>Google rolls out on-site</h3> <p>recommendation for +1 buttonSource: Technology feed</p>
+										<div class="panel">
+											<span class="ui-btn use-btn">use</span>
+										</div>
+									</li>
+									<li class="feed-s-r-l-item fn-clear">
+										<h3>Google rolls out on-site</h3> <p>recommendation for +1 buttonSource: Technology feed</p>
+										<div class="panel">
+											<span class="ui-btn use-btn">use</span>
+										</div>
+									</li>
+									<li class="feed-s-r-l-item fn-clear">
+										<h3>Google rolls out on-site</h3> <p>recommendation for +1 buttonSource: Technology feed</p>
+										<div class="panel">
+											<span class="ui-btn use-btn">use</span>
+										</div>
+									</li>
+									<li class="feed-s-r-l-item fn-clear">
+										<h3>Google rolls out on-site</h3> <p>recommendation for +1 buttonSource: Technology feed</p>
+										<div class="panel">
+											<span class="ui-btn use-btn">use</span>
+										</div>
+									</li>
+									<li class="feed-s-r-l-item fn-clear">
+										<h3>Google rolls out on-site</h3> <p>recommendation for +1 buttonSource: Technology feed</p>
+										<div class="panel">
+											<span class="ui-btn use-btn">use</span>
+										</div>
+									</li>
+									<li class="feed-s-r-l-item fn-clear">
+										<h3>Google rolls out on-site</h3> <p>recommendation for +1 buttonSource: Technology feed</p>
+										<div class="panel">
+											<span class="ui-btn use-btn">use</span>
+										</div>
+									</li>
+									<li class="feed-s-r-l-item fn-clear">
+										<h3>Google rolls out on-site</h3> <p>recommendation for +1 buttonSource: Technology feed</p>
+										<div class="panel">
+											<span class="ui-btn use-btn">use</span>
+										</div>
+									</li>
+									<li class="feed-s-r-l-item fn-clear">
+										<h3>Google rolls out on-site</h3> <p>recommendation for +1 buttonSource: Technology feed</p>
+										<div class="panel">
+											<span class="ui-btn use-btn">use</span>
+										</div>
+									</li>
+									<li class="feed-s-r-l-item fn-clear">
+										<h3>Google rolls out on-site</h3> <p>recommendation for +1 buttonSource: Technology feed</p>
+										<div class="panel">
+											<span class="ui-btn use-btn">use</span>
+										</div>
+									</li>
+									<li class="feed-s-r-l-item fn-clear">
+										<h3>Google rolls out on-site</h3> <p>recommendation for +1 buttonSource: Technology feed</p>
+										<div class="panel">
+											<span class="ui-btn use-btn">use</span>
+										</div>
+									</li>
+									<li class="feed-s-r-l-item fn-clear">
+										<h3>Google rolls out on-site</h3> <p>recommendation for +1 buttonSource: Technology feed</p>
+										<div class="panel">
+											<span class="ui-btn use-btn">use</span>
+										</div>
+									</li>
+									<li class="feed-s-r-l-item fn-clear">
+										<h3>Google rolls out on-site</h3> <p>recommendation for +1 buttonSource: Technology feed</p>
+										<div class="panel">
+											<span class="ui-btn use-btn">use</span>
+										</div>
+									</li>
+									<li class="feed-s-r-l-item fn-clear">
+										<h3>Google rolls out on-site</h3> <p>recommendation for +1 buttonSource: Technology feed</p>
+										<div class="panel">
+											<span class="ui-btn use-btn">use</span>
+										</div>
+									</li>
+									<li class="feed-s-r-l-item fn-clear">
+										<h3>Google rolls out on-site</h3> <p>recommendation for +1 buttonSource: Technology feed</p>
+										<div class="panel">
+											<span class="ui-btn use-btn">use</span>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script src="./js/jquery-1.8.0.min.js"></script>
+<script src="./js/ui_common.js"></script>
+</body>
+</html>

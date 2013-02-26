@@ -1,0 +1,56 @@
+.easy-connect-search
+{
+	margin-bottom: 15px;
+	text-align: center;
+	font-size: 0;
+	color: #424242;
+}
+.easy-connect-search label, .easy-connect-search .ui-input-text, .easy-connect-search .ui-btn
+{
+	display: inline-block;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+.easy-connect-search label
+{
+	height: 27px;
+	line-height: 27px;
+	font-size: 12px;
+}
+.easy-connect-search .ui-input-text
+{
+	width: 300px;
+}
+.easy-connect-search .ui-btn
+{
+	width: 73px;
+	height: 25px;
+	line-height: 25px;
+}
+.pub-f-t-head  .channel
+{
+	margin-left: 21px;
+}
+.pub-f-table   .name
+{
+	width: 150px;
+}
+.pub-f-table   .info
+{
+	width: 150px;
+}
+.pub-f-table   .graph
+{
+	width: 150px;
+}
+.pub-f-t-cont  .score
+{
+	width: 150px;
+}
+.pub-f-t-cont
+{
+	max-height: 240px;
+	overflow: hidden;
+	overflow-y: auto;
+
+}

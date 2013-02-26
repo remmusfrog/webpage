@@ -1,0 +1,121 @@
+.feed-cont
+{
+	border-width: 1px;
+}
+.feed-head
+{
+	border:none;
+}
+.feed-cont li, .feed-head
+{
+	width: 100%;
+	padding: 0;
+}
+.feed-head
+{
+	height: 15px;
+	line-height: 15px;
+}
+.feed-detail
+{
+    width:auto;
+}
+.feed-detail .tit
+{
+	width: 136px;
+	margin-left: 8px;
+}
+.feed-detail .status
+{
+	width: 75px;
+}
+.feed-detail .p-group
+{
+	 width: 150px;
+}
+.feed-detail .date
+{
+	 width: 105px;
+}
+.feed-detail .usr
+{
+	 width: 75px;
+}
+.feed-detail .feedback
+{
+	 width: 65px;
+}
+.feed-detail .feedback .icon-arrow
+{
+	display: inline-block;
+	border: 4px solid black;
+	font-size: 0;
+	height: 0;
+	padding: 0;
+	float: none;
+	margin-left: 5px;
+	border-color: transparent transparent transparent black;
+	vertical-align:middle;
+}
+.feed-detail .impact
+{
+	width: 65px;
+}
+.feed-detail .view
+{
+	margin-right: 8px;
+}
+.ui-mt-15
+{
+	margin-top: 6px;
+}
+.pub-schedule-detail .tit
+{
+	width: 150px;
+}
+.feed-head .tit
+{
+	margin-left: 10px;
+}
+.pub-schedule-detail .p-group
+{
+	width: 100px;
+}
+.pub-schedule-detail .date
+{
+	width: 160px;
+}
+.pub-schedule-detail .date .clock
+{
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	margin-left: 3px;
+	background: url(../images/icon_clock.png) center center no-repeat;
+	position: relative;
+	top: 1px;
+	vertical-align:text-top;
+}
+.pub-schedule-detail .repeat
+{
+	width: 80px;
+}
+.pub-schedule-detail .usr
+{
+	width: 100px;
+}
+.feed-detail .edit.disabled
+{
+	cursor: default;
+	background-image:url(../images/icon_edit_disabled_12x13.png);
+}
+.ui-fl-w-100
+{
+	float: left;
+	width: 100%;
+}
+.feed-top, .notice-center
+{
+	height: 1%;
+}
+

@@ -1,0 +1,58 @@
+.pub-v-feedback
+{
+	margin-bottom: 15px;
+}
+.pub-f-table .account
+{
+	width: 120px;
+	margin-left: 18px;
+}
+.pub-f-table .users
+{
+	width: 40px;
+}
+.pub-f-table .pub
+{
+	width: 70px;
+}
+.pub-f-table .feeds
+{
+	width: 60px;
+}
+.pub-f-table .package
+{
+	width: 80px;
+}
+.pub-f-table .start-date
+{
+	width: 100px;
+}
+.pub-f-table .end-date
+{
+	width: 100px;
+}
+.pub-f-table .status
+{
+	width: 60px;
+}
+.pub-f-table .max-users
+{
+	width: 60px;
+}
+.active-overview h1 .ui-icon
+{
+    margin-right:10px;
+}
+.active-overview .pub-v-f-head .ui-icon
+{
+    margin:6px 5px 0 0;
+    float:left;
+}
+.active-overview .pub-v-f-head h3
+{
+    font-weight:500;
+    font-size:16px;
+    color#424242;
+    float:left;
+    line-height:36px;
+}

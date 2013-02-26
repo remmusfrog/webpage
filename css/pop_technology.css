@@ -1,0 +1,45 @@
+.pop-tech-feed
+{
+	margin: -200px 0 0 -280px;
+}
+.pop-tech-feed .pop-head
+{
+	margin-bottom: 10px;
+}
+.tech-feed-cont
+{
+	padding: 0 15px;
+}
+.tech-feed-cont .time
+{
+	margin-bottom: 5px;
+	font-size: 11px;
+	text-transform: capitalize;
+}
+.tech-feed-cont .time span
+{
+	color:black;
+}
+.tech-feed-cont h3
+{
+	margin-bottom: 10px;
+	font-size: 14px;
+	font-weight: 400;
+	color:#000;
+}
+.tech-f-detail
+{
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin-bottom: 10px;
+	font-size: 12px;
+	color: #828283;
+	border-radius:4px;
+}
+.tech-f-detail .cover
+{
+	float: left;
+	width: 100px;
+	height: 100px;
+	margin-right: 15px;
+}

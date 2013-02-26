@@ -1,0 +1,141 @@
+.social-content .s-cont-search
+{
+	text-align: left;
+	font-size: 0;
+	margin-bottom: 15px;
+}
+.social-content .s-cont-search .ui-input-text, .social-content .s-cont-search .ui-btn
+{
+	width: 288px;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+.social-content .s-cont-search .ui-btn
+{
+	width: 83px;
+	height: 25px;
+	line-height: 25px;
+	font-size: 11px;
+}
+.social-content .s-feeds
+{
+	color: #424242;
+}
+.social-content .s-feeds .li-item
+{
+	width: 100%;
+	float: left;
+	display: inline;
+	margin-bottom: 15px;
+}
+.social-content .s-feeds .li-item.on .detail
+{
+	display: block;
+}
+.social-content .s-feeds .li-item.on .ui-icon-arrow
+{
+	border-color: #000 transparent transparent transparent;
+}
+.social-content .s-feeds .head
+{
+	height: 18px;
+	line-height: 18px;
+	font-size: 0;
+}
+.social-content .s-feeds .head  span
+{
+	display: inline-block;
+	font-size: 12px;
+	vertical-align: middle;
+}
+.social-content .s-feeds .head .ui-icon-feed-s
+{
+	margin-right: 3px;
+}
+.social-content .s-feeds .head .ui-icon-checked, .social-content .s-feeds .head .ui-icon-feed-sub
+{
+	margin-left: 5px;
+}
+.social-content .s-feeds .publisher, .social-content .s-feeds .category
+{
+	margin-left: 15px;
+}
+.social-content .s-feeds b
+{
+	color: #000;
+	margin-left: 3px;
+	font-weight: 400;
+}
+.social-content .s-feeds .top
+{
+	position: relative;
+	margin-bottom: 2px;
+}
+.social-content .s-feeds .top .ui-icon-arrow, .social-content .s-feeds .top h3
+{
+	float: left;
+	margin-right: 15px;
+	line-height: 24px;
+}
+
+.social-content .s-feeds .top .ui-icon-arrow
+{
+	margin:7px 2px 0 0;
+}
+.social-content .s-feeds .top h3
+{
+	font-size: 16px;
+	line-height: 1.25;
+	font-weight: 400;
+	cursor: pointer;
+	max-width: 540px;
+	text-overflow:ellipsis;
+	white-space: normal;
+	word-break:break-all;
+}
+.social-content .s-feeds .top .rt
+{
+	float: right;
+}
+.social-content .s-feeds .top .rt .ui-icon
+{
+	float: left;
+	margin: 6px 0 0 10px;
+}
+.social-content .s-feeds .top .rt .time
+{
+	margin-right: 0;
+	float: left;
+	height: 24px;
+	line-height: 24px;
+}
+.social-content .s-feeds .detail 
+{
+	line-height: 1.5;
+	border: 1px solid #CCC;
+	padding: 10px;
+	border-radius: 4px;
+	display: none;
+	background: -webkit-linear-gradient(top,white, #f0f0f0);
+	background: -moz-linear-gradient(top,white,#f0f0f0);
+	background: -o-linear-gradient(top,white,#f0f0f0);
+	background: -ms-linear-gradient(top,white,#f0f0f0);
+}
+.social-content .s-feeds .detail .cover
+{
+	float: left;
+	margin-right: 10px;
+}
+.add-to-lib
+{
+	top: 38px;
+	right: 34px;
+}
+.add-to-lib .pop-c
+{
+	padding: 0 10px;
+}
+.add-to-lib .pop-c .ui-select
+{
+	width: 156px;
+}

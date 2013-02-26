@@ -1,0 +1,81 @@
+.pop-change-sort .pop-cont
+{
+	padding: 0 15px;
+}
+.pop-change-sort .sort-list
+{
+	border: 1px solid #C2C6C8;
+	border-bottom: none;
+	height: 1%;
+}
+
+.pop-change-sort .sort-list dt, .pop-change-sort .sort-list dd
+{
+	float: left;
+	display: inline;
+	width: 100%;
+}
+.pop-change-sort .sort-list dt
+{
+	line-height: 26px;
+	font-size: 12px;
+	background: #C2C6C8;
+	font-weight: 700;
+}
+.pop-change-sort .sort-list span
+{
+	float: left;
+	height:26px;
+	line-height: 26px;
+	overflow: hidden;
+	word-break: break-all;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+}
+.pop-change-sort .sort-list .one
+{
+	text-align: left;
+	width: 252px;
+	margin-left: 10px;
+}
+.pop-change-sort .sort-list .two, .pop-change-sort .sort-list .three
+{
+	float: right;
+	margin-right: 10px;
+	width: 48px;
+	text-align: center;
+}
+.pop-change-sort .sort-list dd{
+	background: #F7F7F7;
+	background:-webkit-gradient(linear, left top, left bottom, from(#FFF), to(#F7F7F7));
+	background:-moz-linear-gradient(top, #FFF, #F7F7F7);
+	background:-o-linear-gradient(top, #FFF, #F7F7F7);
+	background:-ms-linear-gradient(top, #FFF, #F7F7F7);
+	border-bottom: 1px solid #C2C6C8;
+}
+.pop-change-sort .sort-list dd:hover
+{
+	background: #f2f2f2;
+}
+.pop-change-sort .sort-list dt .three
+{
+	text-indent: -9999px;
+}
+.pop-change-sort .sort-list dd .two, .pop-change-sort .sort-list dd .three
+{
+	cursor: pointer;
+	height: 12px;
+	margin-top: 8px;
+	text-indent: -9999px;
+	background: url(../images/icon_other.png) 4px 0 no-repeat;
+	
+}
+.pop-change-sort .sort-list .enable .two
+{
+	background-position: 4px -43px;
+}
+.pop-change-sort .sort-list dd .three{
+	margin-top: 6px;
+	height: 15px;
+	background: url(../images/icons.png) -574px -297px no-repeat;
+}

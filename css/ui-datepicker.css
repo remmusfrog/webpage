@@ -1,0 +1,237 @@
+.schedule-sel-btn
+{
+	float: left;
+}
+.schedule-date-range
+{
+	clear: left;
+	float: left;
+	padding-top: 34px;
+	background: url(../images/schedule_datepicker_bg.png) 10px top no-repeat;
+}
+.schedule-date-range .range-box
+{
+	background: white;
+	box-shadow: 0 2px  10px #333;
+	height: 1%;
+	float: left;
+	border-radius:10px;
+	padding-bottom: 15px;
+}
+.fn-datepicker
+{
+	font-family: Lato;
+	width: 263px;
+	margin: 0 auto;
+	font-size: 14px;
+	color: #333;
+	float: left;
+}
+.fn-clear:after
+{
+	content: '';
+	height: 0;
+	font-size: 0;
+	overflow: hidden;
+	display:block;
+	clear: both;
+}
+.fn-d-head
+{
+	color: #797979;
+	font-size: 16px;
+	height: 38px;
+	line-height: 38px;
+	font-weight: 400;
+	border-bottom: 1px solid #ccc;
+	padding: 0 10px;
+	margin-bottom: 10px;
+	height: 1%;
+}
+.fn-d-head .rt
+{
+	float: right;
+}
+.fn-d-head .fn-d-sel, .seperator
+{
+	font-size: 12px;
+	margin:0 5px 0 0;
+	display: inline-block;
+	vertical-align: middle;
+	color: #797979;
+}
+.seperator
+{
+	vertical-align: middle;
+}
+.fn-d-cont
+{
+	clear: left;
+	padding: 0 15px;
+	margin-bottom: 7px;
+
+}
+.fn-d-cont .btn, .year-and-month
+{
+	float: left;
+	text-align: center;
+	cursor:pointer;
+}
+.end-pre-month
+{
+	clear: left;
+}
+.year-and-month
+{
+	width: 168px;
+	text-align: center;
+}
+.year-and-month select
+{
+	display: inline-block;
+	text-align: center;
+	margin: 0 5px 0 0;
+	color: #797979;
+	font-size: 12px;
+}
+.fn-d-cont .btn
+{
+	width: 32px;
+	line-height: 18px;
+	background: url(../images/icon_date_pre.png) center center no-repeat;
+	text-align: left;
+	text-indent: -9999px;
+}
+.fn-d-cont .next-btn
+{
+	float: right;
+	background: url(../images/icon_date_next.png) center center no-repeat;
+}
+.fn-d-cont .week
+{
+	float: left;
+	border-left: 2px solid #f1f1f1;
+	margin-top: 10px;
+}
+.fn-d-cont .week span, .date-container span
+{
+	float: left;
+	width: 31px;
+	text-align: center;
+	text-transform: capitalize;
+	line-height: 26px;
+	border: 2px solid #f1f1f1;
+	border-width: 0 2px 2px 0;
+	background: white;
+	color: #797979;
+}
+.fn-d-cont .week span
+{
+	height: 22px;
+	line-height: 22px;
+	color: black;
+	border-color:#f1f1f1;
+	background: #f1f1f1;
+	font-size: 14px;
+}
+.fn-d-cont .week .end
+{
+	color: #79797f;
+}
+.date-container
+{
+	clear: left;
+	border-left: 2px solid #f1f1f1;
+}
+.date-container .selected
+{
+	color: #1c7ee4;
+	background: #c0edfd;
+}
+.date-container .disabled
+{
+	color: #d7d6d6;
+	background: #f7f7f7;
+}
+.date-container .date-seperator
+{
+	color: #e7e6e6;
+	background: #fcfcfc;
+}
+.ui-mr-0, .year-and-month .ui-mr-0
+{
+	margin-right: 0;
+}
+.date-repeat
+{
+	margin:8px 0 5px 15px;
+	width: 145px;
+}
+.confirm-date-select
+{
+	text-align: right;
+	padding-right: 15px;
+}
+.schedule-btn
+{
+	color: #424242;
+	display: inline-block;
+	font-size: 10px;
+	text-align: center;
+	min-width: 60px;
+	height: 23px;
+	line-height: 23px;
+	text-decoration: none;
+	border: 1px solid #787878;
+	border: 1px solid rgba(120, 120, 120, .72);
+	background: #F1F1F1;
+	background: -webkit-gradient(linear,left top, left bottom, from(white), to(#F1F1F1));
+	background: -moz-linear-gradient(top,white,#F1F1F1);
+	background: -o-linear-gradient(top,white,#F1F1F1);
+	background: -ms-linear-gradient(top,white,#F1F1F1);
+	border-radius: 4px;
+	cursor: pointer;
+}
+.fn-d-foot
+{
+	text-align: center;
+	line-height: 20px;
+}
+.fn-d-foot span
+{
+	font-size: 14px;
+	color: #1c7ee4;
+	text-transform: capitalize;
+	cursor: pointer;
+}
+.fn-end-datepicker
+{
+	position: relative;
+	width: 308px;
+}
+.ui-ml-45
+{
+	margin-left: 45px;
+}
+.date-to
+{
+	position: absolute;
+	top: 50%;
+	left:0;
+	width: 45px;
+	margin-top: -12px;
+	height: 24px;
+	line-height: 24px;
+	font-size: 14px;
+	color: #797979;
+	text-align: center;
+	text-transform: capitalize;
+}
+.date-cont
+{
+	float: right;
+}
+.clear
+{
+	clear: both;
+}

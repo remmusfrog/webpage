@@ -1,0 +1,24 @@
+.ui-table .topic
+{
+	width: 146px;
+}
+.ui-table .pub
+{
+	width: 98px;
+}
+.ui-table .tags
+{
+	width: 200px;
+}
+.ui-table .pubdate
+{
+	width: 75px;
+}
+.ui-table .subscribe
+{
+	width: 65px;
+}
+.ui-table .usage
+{
+	width: 70px;
+}

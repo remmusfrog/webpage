@@ -1,0 +1,41 @@
+.edit-item .field-name
+{
+	margin-right: 25px;
+}
+.field-val .txt
+{
+	display: block;
+}
+.field-val .ui-input-text, .field-val .ui-textarea
+{
+	width: 254px;
+}
+.field-val .ui-textarea
+{
+	height: 60px;
+}
+.field-val .mail-input
+{
+	width: 224px;
+}
+.edit-item .edit-input
+{
+	display: none;
+	float: left;
+}
+.edit-item .avator
+{
+	margin-right: 5px;
+}
+.edit-item .avator, .edit-item .btn-change
+{
+	float: left;
+}
+.edit-item .btn-change
+{
+	width: 45px;
+}
+.field-val .ui-select
+{
+	width: 272px;
+}

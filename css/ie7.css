@@ -1,0 +1,6 @@
+.header .notice-center .ui-select
+{
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+}

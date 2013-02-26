@@ -1,0 +1,723 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>ui datepicker</title>
+	<link rel="stylesheet" type="text/css" href="./css/reset.css" media="all">
+	<!-- <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato" media="all"> -->
+	<link rel="stylesheet" type="text/css" href="./css/ui_common.css" media="all">
+	<link rel="stylesheet" type="text/css" href="./css/common.css" media="all">
+	<link rel="stylesheet" type="text/css" href="./css/ui-datepicker.css" media="all">
+</head>
+<body style="padding:50px;">
+	<input type="hidden"  data-id="start" id="start-date-selected" />
+	<input type="hidden"  data-id="end" id="end-date-selected" />
+	<div class="schedule-datepicker fn-clear">
+		<span class="schedule-btn schedule-sel-btn">schedule</span>
+		<div class="schedule-date-range fn-clear">
+			<div class="range-box">
+				<div class="fn-datepicker">
+					<div class="fn-d-head fn-clear">
+							select a date
+							<div class="rt">
+								<select  class="fn-d-sel" id="start-hour">
+								</select>
+								<span class="seperator">:</span>
+								<select class="fn-d-sel" id="start-minute">
+								</select>
+							</div> 
+					</div>
+					<div class="fn-d-cont">
+						<span class="btn" id="start-pre-month">prev</span>
+						<div class="year-and-month">
+							<select id="start-month">may</select>
+							<select class="ui-mr-0" id="start-year">2012</select>
+						</div>
+						<span class="btn next-btn" id="start-next-month">next</span>
+						<div class="week">
+							<span class="end">s</span>
+							<span>m</span>
+							<span>t</span>
+							<span>w</span>
+							<span>t</span>
+							<span>f</span>
+							<span class="end">s</span>
+						</div>
+						<div class="date-container fn-clear" id="start-date">
+							<span>1</span>
+							<span class="disabled">2</span>
+							<span>3</span>
+							<span class="selected">9</span>
+							<span>10</span>
+							<span>11</span>
+							<span>12</span>
+							<span>12</span>
+							<span>12</span>
+						</div>
+					</div>
+					<div class="fn-d-foot">
+						<span id="fn-sel-today">select today</span>
+					</div>
+				</div>
+
+				<!-- end date -->
+				<div class="fn-datepicker fn-end-datepicker " id="fn-end-datepicker">
+					<div class="date-to">to</div>
+					<div class="date-cont ui-ml-45">
+						<div class="fn-d-head fn-clear">
+								<div class="rt">
+									<select class="fn-d-sel" id="end-hour">
+									</select>
+									<span class="seperator">:</span>
+									<select class="fn-d-sel" id="end-minute">
+									</select>
+								</div>
+						</div>
+						<div class="fn-d-cont">
+							<span class="btn" id="end-pre-month">prev</span>
+							<div class="year-and-month">
+								<select id="end-month">may</select>
+								<select class="ui-mr-0" id="end-year">2012</select>
+							</div>
+							<span class="btn next-btn" id="end-next-month">next</span>
+							<div class="week">
+								<span class="end">s</span>
+								<span>m</span>
+								<span>t</span>
+								<span>w</span>
+								<span>t</span>
+								<span>f</span>
+								<span class="end">s</span>
+							</div>
+							<div class="date-container fn-clear" id="end-date">
+								<span>1</span>
+								<span class="disabled">2</span>
+								<span>3</span>
+								<span class="selected">9</span>
+								<span>10</span>
+								<span>11</span>
+								<span>12</span>
+								<span>12</span>
+								<span>12</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<div class="date-repeat">
+					<div class="ui-select ui-zIndex-30">
+						<input type="hidden" value="0" class="input-hidden" />
+						<div class="ui-select-head"><b class="val">no-repeat</b><span class="arrow">more</span></div>
+						<ul>
+							<li data-val="0">no-repeat</li>
+							<li data-val="1">repeat every day</li>
+						</ul>
+					</div>
+				</div>
+				<div class="confirm-date-select">
+					<div class="schedule-btn">schedule</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="./js/jquery-1.8.0.min.js"></script>
+	<script>
+	// <![CDATA[
+    (function ($) {
+        $.extend($.fn, {
+            datePicker: function (opt) {
+                var set = $.extend(
+						{
+						    minDate: "2010-1-8 12:13",
+						    maxDate: "2014-10-13 1415",
+						    selectedDate: "2013-3-21 18:19",
+						    seperator: ["-", ":"],
+						    yearContainerId: "start-year",
+						    monthContainerId: "start-month",
+						    dateContainerId: "start-date",
+						    onSelected: function () { }
+						}, opt);
+                var global =
+						{
+						    domSaver: {},
+						    wrapSaver: {},
+						    viewSaver: {},
+						    formateMin: {},
+						    formateMax: {},
+						    selectedDate: {}
+						}
+                var DateUtil =
+						{
+						    format: function (date) {
+						        var tmpTime = date.split(/\s+/);
+						        var dateArr = tmpTime[0].split(set.seperator[0]);
+						        var timeArr = tmpTime[1].split(set.seperator[1]);
+						        return {
+						            year: +dateArr[0],
+						            month: +dateArr[1],
+						            date: +dateArr[2],
+						            hour: +timeArr[0],
+						            minute: +timeArr[1]
+						        }
+						    },
+						    isLeapYear: function (year) {
+						        if (year % 400 == 0 || (year % 4 == 0) && (year % 100 != 0)) {
+						            return true;
+						        } else {
+						            return false;
+						        }
+						    },
+						    dateCal: function (month, isLeapYear) {
+						        if (month > 12 || month <= 0) {
+						            return false;
+						        }
+						        if (month == 4 || month == 6 || month == 9 || month == 11) {
+						            return 30;
+						        }
+						        if (month == 2) {
+						            if (isLeapYear) {
+						                return 29;
+						            }
+						            return 28;
+						        } else {
+						            return 31;
+						        }
+						    },
+						    setValue: function (type, v) {
+						        if (v != null) {
+						        } else {
+						            return false;
+						        }
+						        if (type == "date") {
+						            global.viewSaver[type].attr("value", v);
+						            $('span', global.domSaver[type]).removeAttr('selected').removeClass('selected');
+						            $('span[value=' + v + ']', global.domSaver[type]).attr("selected", "selected").addClass('selected');
+						        } else {
+						            $('option', global.domSaver[type]).removeAttr('selected').removeClass('selected');
+						            if ($('option[value=' + v + ']', global.domSaver[type]).hasClass("disabled")) //current option month hour minute outOfLimit
+						            {
+						                var selectedObj = $('option:not(.disabled)', global.domSaver[type]).first();
+						                global.viewSaver[type].attr('value', selectedObj.attr("value"));
+						                selectedObj.attr("selected", "selected").addClass('selected');
+						            } else {
+						                global.viewSaver[type].attr('value', v);
+						                $('option[value=' + v + ']', global.domSaver[type]).attr("selected", "selected").addClass('selected');
+						            }
+						        }
+
+						    },
+						    getWeek: function (date, v) {
+						        var date = new Date(Date.UTC(date.year, date.month - 1, v));
+						        return date.getUTCDay();
+						    },
+						    getValue: function (type) {
+						        return global.viewSaver[type].attr('value');
+						    }
+						}
+
+                var Render =
+						{
+						    optionStr: '',
+						    weekStr: '',
+						    assembleOption: function (type, v, selected, outOfLimit) {
+						        var selected = selected ? ' selected' : '';
+						        var disabled = outOfLimit ? ' disabled' : '';
+						        if (type == "month" || type == "year" || type == "hour" || type == "minute") {
+						            if (type == "month") {
+						                var tmpArr = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+						                var showV = tmpArr[v - 1];
+						                var tmpl = '<option class="' + type + disabled + '" selected="' + selected + '"' + disabled + ' value="' + v + '" >' + showV + '</option>';
+						            } else {
+						                var tmpl = '<option class="' + type + disabled + '" selected="' + selected + '"' + disabled + ' value="' + v + '" >' + v + '</option>';
+						            }
+						        } else {
+						            var tmpl = '<span class="' + type + selected + disabled + '" selected="' + selected + '"' + disabled + ' value="' + v + '" >' + v + '</span>';
+						        }
+
+						        this.optionStr += tmpl;
+						    },
+						    setOption: function (type, selectedValue) {
+
+						        if (type == 'date') {
+						            global.domSaver[type].html(this.weekStr);
+						        } else {
+						            global.domSaver[type].html(this.optionStr);
+						        }
+						        this.optionStr = '';
+						        this.weekStr = '';
+						        DateUtil.setValue(type, selectedValue);
+						    },
+						    assemble: function (fnName, args) {
+						        var lowFnName = fnName;
+						        var fnName = fnName.replace(/^.{1}/, function (i) {
+						            return i.toUpperCase();
+						        });
+
+						        this['assemble' + fnName](args);
+
+						        // if(lowFnName == "date" && global.domSaver[lowFnName].find('span.disabled').length)
+						        // {
+						        // 	$('span:not(.disabled):first',global.domSaver[lowFnName]).addClass('selected').attr('selected','selected').siblings().removeClass('selected').removeAttr('selected');
+						        // }else if(global.domSaver[lowFnName].find('option.disabled').length)
+						        // {
+						        // 	$('option:not(.disabled):first',global.domSaver[lowFnName]).addClass('selected').attr('selected','selected').siblings().removeClass('selected').removeAttr('selected');
+						        // }
+						    },
+						    assembleYear: function (current) {
+						        var minYear = global.formatedMin.year;
+						        var maxYear = global.formatedMax.year;
+						        while (minYear <= maxYear) {
+						            this.assembleOption(
+										'year',
+										minYear,
+										minYear == current.year);
+						            minYear++;
+						        }
+						        this.setOption('year', current.year);
+						    },
+						    assembleMonth: function (current) {
+						        var month = 1;
+						        while (month <= 12) {
+						            this.assembleOption(
+										'month',
+										month,
+										month == current.month,
+										((current.year == global.formatedMax.year) && (month > global.formatedMax.month)) || ((current.year == global.formatedMin.year) && (month < global.formatedMin.month))
+										);
+						            month++;
+						        }
+						        this.setOption('month', current.month);
+						    },
+						    assembleDate: function (current) {
+						        var date = 1;
+						        var isLeapYear = DateUtil.isLeapYear(current.year);
+						        var daysInMonth = DateUtil.dateCal(current.month, isLeapYear);
+						        while (date <= daysInMonth) {
+						            this.assembleOption(
+										'date',
+										date,
+										((global.selectedDate.year == current.year) && (global.selectedDate.month == current.month) && (date == global.selectedDate.date)),
+										((current.year == global.formatedMax.year) && (current.month == global.formatedMax.month) && (date > global.formatedMax.date)) || ((current.year == global.formatedMin.year) && (current.month == global.formatedMin.month) && (date < global.formatedMin.date))
+										);
+						            date++;
+						        }
+
+						        var week = DateUtil.getWeek(current, 1);
+
+						        var startWeek = DateUtil.getWeek(current, 1);
+						        var endWeek = DateUtil.getWeek(current, daysInMonth);
+						        var prev = '';
+						        var next = '';
+						        var preMonth = current.month == 1 ? 12 : current.month - 1;
+						        var preYear = current.month == 1 ? current.year - 1 : current.year;
+						        var preIsLeapYear = DateUtil.isLeapYear(preYear);
+						        var preDaysInMonth = DateUtil.dateCal(preMonth, preIsLeapYear);
+
+						        while (startWeek > 0) {
+						            prev += '<span class="date disabled date-seperator" disabled="disabled">' + (preDaysInMonth - startWeek + 1) + '</span>';
+						            startWeek--;
+						        }
+						        var i = 1;
+						        while (endWeek < 6) {
+						            next += '<span class="date disabled date-seperator" disabled="disabled">' + i + '</span>';
+						            endWeek++;
+						            i++
+						        }
+						        this.weekStr = prev + this.optionStr + next;
+						        this.setOption('date', current.date);
+						    },
+						    assembleHour: function (current) {
+						        var hour = 0;
+						        console.log(current);
+						        while (hour < 24) {
+						            this.assembleOption(
+										'hour',
+										hour,
+										hour == current.hour,
+										((current.year == global.formatedMax.year) && (current.month == global.formatedMax.month) && (current.date == global.formatedMax.date) && (hour > global.formatedMax.hour) || (current.year == global.formatedMin.year) && (current.month == global.formatedMin.month) && (current.date == global.formatedMin.date) && (hour < global.formatedMin.hour))
+										);
+						            hour++;
+						        }
+						        this.setOption('hour', current.hour);
+						    },
+						    assembleMinute: function (current) {
+						        var minute = 0;
+						        while (minute < 60) {
+						            this.assembleOption(
+										'minute',
+										minute,
+										current.minute == minute,
+										((current.year == global.formatedMax.year) && (current.month == global.formatedMax.month) && (current.date == global.formatedMax.date) && (current.hour == global.formatedMax.hour) && (minute > global.formatedMax.minute) || (current.year == global.formatedMin.year) && (current.month == global.formatedMin.month) && (current.date == global.formatedMin.date) && (current.hour == global.formatedMin.hour) && (minute < global.formatedMin.minute))
+										);
+						            minute++;
+						        }
+						        this.setOption('minute', current.minute);
+						    },
+						    setWrapper: function () {
+						        global.domSaver.year = $("#" + set.yearContainerId);
+						        global.domSaver.month = $("#" + set.monthContainerId);
+						        global.domSaver.date = $("#" + set.dateContainerId);
+						        global.domSaver.hour = $("#" + set.hourContainerId);
+						        global.domSaver.minute = $("#" + set.minuteContainerId);
+
+						        global.domSaver.preMonth = $("#" + set.preBtnContainerId);
+						        global.domSaver.nextMonth = $("#" + set.nextBtnContainerId);
+
+						        global.viewSaver.year = global.domSaver.year;
+						        global.viewSaver.month = global.domSaver.month;
+						        global.viewSaver.date = global.domSaver.date;
+						        global.viewSaver.hour = global.domSaver.hour;
+						        global.viewSaver.minute = global.domSaver.minute;
+
+						        global.viewSaver.inputVal = $("#" + set.inputValueId);
+						    },
+						    init: function () {
+						        // var selectedDate;
+						        // var today = new Date();
+						        // var times = today.getUTCFullYear() + "-" + (+today.getUTCMonth() + 1) + "-" + today.getUTCDate() + " " + today.getUTCHours() + ":" + today.getUTCMinutes();
+						        // if (set.selectedDate == "today") {
+						        //     selectedDate = DateUtil.format(times);
+						        // } else {
+						        //     selectedDate = DateUtil.format(set.selectedDate);
+						        // }
+						        // set.minDate = times;
+						        // var maxDTimes = (+today.getUTCFullYear() + parseInt(set.maxDate)) + "-" + (+today.getUTCMonth() + 1) + "-" + today.getUTCDate() + " " + today.getUTCHours() + ":" + today.getUTCMinutes();
+
+						        global.formatedMin = DateUtil.format(set.minDate);
+						        global.formatedMax = DateUtil.format(set.maxDate);
+						        // alert(global.formatedMin.year);
+						        this.setWrapper();
+						        this.assemble('year', set.selectedDate);
+						        this.assemble('month', set.selectedDate);
+						        // this.assemble('date', set.selectedDate);
+						        // this.assemble('hour', set.selectedDate);
+						        // this.assemble('minute', set.selectedDate);
+						        // global.selectedDate = selectedDate;
+						        // var inputval = global.formatedMin.year + set.seperator[0] + global.formatedMin.month + set.seperator[0] + global.formatedMin.date + " " + global.formatedMin.hour + set.seperator[1] + global.formatedMin.minute;
+						        // global.viewSaver.inputVal.val(inputval);
+
+						    }
+						}
+
+      //           var Event =
+						// {
+						//     public: function (target) {
+						//         if ($(target).hasClass('disabled')) {
+						//             return false;
+						//         }
+						//         console.log($(target).attr('value'));
+						//         console.log($(target).attr('class'));
+						//         DateUtil.setValue($(target).attr('class').match(/month|year|date|hour|minute/)[0], $(target).attr('value'));
+						//     },
+						//     onYearChange: function (e) {
+
+						//         var year = DateUtil.getValue('year');
+						//         var month = DateUtil.getValue('month');
+						//         var dateObj =
+						// 		{
+						// 		    year: year,
+						// 		    month: null,
+						// 		    date: null,
+						// 		    hour: null,
+						// 		    minute: null
+						// 		}
+
+						//         Render.assemble('month', dateObj);
+						//         DateUtil.setValue("month", month);
+						//         dateObj.month = DateUtil.getValue('month');
+						//         Render.assemble('date', dateObj);
+						//     },
+						//     onPreMonth: function () {
+						//         var month = DateUtil.getValue('month');
+						//         var year = DateUtil.getValue('year');
+						//         var cYear = +month - 1 < 1 ? +year - 1 : year;
+						//         var cMonth = +month - 1 < 1 ? 12 : +month - 1;
+
+						//         var oDate = +new Date(Date.UTC(global.formatedMin.year, global.formatedMin.month));
+						//         var cDate = +new Date(Date.UTC(cYear, cMonth));
+						//         if (cDate < oDate) {
+						//             return false;
+						//         }
+
+						//         var dateObj =
+						// 		{
+						// 		    year: cYear,
+						// 		    month: cMonth,
+						// 		    date: 1,
+						// 		    hour: 0,
+						// 		    minute: 0
+						// 		}
+						//         Render.assemble('year', dateObj);
+						//         DateUtil.setValue('year', dateObj.year);
+						//         Render.assemble('month', dateObj);
+						//         DateUtil.setValue('month', dateObj.month);
+						//         Render.assemble('date', dateObj);
+						//     },
+						//     onNextMonth: function () {
+						//         var month = DateUtil.getValue('month');
+						//         var year = DateUtil.getValue('year');
+						//         var cYear = +month + 1 > 12 ? +year + 1 : year;
+						//         var cMonth = +month + 1 > 12 ? 1 : +month + 1;
+
+						//         var oDate = +new Date(Date.UTC(global.formatedMax.year, global.formatedMax.month));
+						//         var cDate = +new Date(Date.UTC(cYear, cMonth));
+
+						//         if (cDate > oDate) {
+						//             return false;
+						//         }
+						//         var dateObj =
+						// 		{
+						// 		    year: cYear,
+						// 		    month: cMonth,
+						// 		    date: 1,
+						// 		    hour: 0,
+						// 		    minute: 0
+						// 		}
+						//         Render.assemble('year', dateObj);
+						//         DateUtil.setValue('year', dateObj.year);
+						//         Render.assemble('month', dateObj);
+						//         DateUtil.setValue('month', dateObj.month);
+						//         Render.assemble('date', dateObj);
+						//     },
+						//     onMonthChange: function (e) {
+						//         var year = DateUtil.getValue('year');
+						//         var month = DateUtil.getValue('month');
+						//         var dateObj =
+						// 		{
+						// 		    year: year,
+						// 		    month: month,
+						// 		    date: null,
+						// 		    hour: null,
+						// 		    minute: null
+						// 		}
+						//         Render.assemble('date', dateObj);
+						//     },
+						//     onDateChange: function (e) {
+						//         if (Event.public(e.target) === false) {
+						//             return false;
+						//         }
+						//         var year = DateUtil.getValue('year');
+						//         var month = DateUtil.getValue('month');
+						//         var date = DateUtil.getValue('date');
+						//         var hour =DateUtil.getValue('hour');
+						//         var dateObj =
+						// 		{
+						// 		    year: year,
+						// 		    month: month,
+						// 		    date: date,
+						// 		    hour: null,
+						// 		    minute: null
+						// 		}
+						//         Render.assemble('hour', dateObj);
+						//         DateUtil.setValue("hour", hour);
+						//         var y = DateUtil.getValue('year');
+						//         var m = DateUtil.getValue('month');
+						//         var d = DateUtil.getValue('date');
+						//         var h = DateUtil.getValue('hour');
+						//         var mi = DateUtil.getValue('minute');
+						//         global.selectedDate = {
+						//             year: y,
+						//             month: m,
+						//             date: d,
+						//             hour: h,
+						//             minute: mi
+						//         }
+						//         var inputval = y + set.seperator[0] + m + set.seperator[0] + d + " " + h + set.seperator[1] + mi;
+						//         global.viewSaver.inputVal.val(inputval);
+						//     },
+						//     onHourChange:function(e){
+						//     	// if(Event.public(e.target) === false){
+						//     	// 	return false;
+						//     	// }
+						//     	var year = DateUtil.getValue('year');
+						//         var month = DateUtil.getValue('month');
+						//         var date = DateUtil.getValue('date');
+						//         var hour = DateUtil.getValue('hour');
+						//         var minute = DateUtil.getValue('minute');
+						//         var dateObj ={
+						//         	year : year,
+						//         	month: month,
+						//         	date : date,
+						//         	hour : hour,
+						//         	minute:null
+						//         }
+ 					// 			Render.assemble('minute', dateObj);
+ 					// 			DateUtil.setValue("minute", minute);
+						//     },
+						//     init: function () {
+						//         global.domSaver.year.live('change', this.onYearChange);
+						//         global.domSaver.month.live('change', this.onMonthChange);
+						//         global.domSaver.hour.live('change', this.onHourChange);
+						//          // global.domSaver.minute.live('change', this.onMinuteChange);
+						//         $('span', global.domSaver.date).live('click', this.onDateChange);
+						//         global.domSaver.preMonth.live("click", this.onPreMonth);
+						//         global.domSaver.nextMonth.live("click", this.onNextMonth);
+						//     }
+						// }
+                Render.init();
+                // Event.init();
+                // return {
+                //     vGetDate: function () {
+                //         return global.selectedDate;
+                //     },
+                //     vSetDate: function (date) {
+                //     	 var selectedDate;
+                //         set.selectedDate = date;
+                //         if(typeof date == "object"){
+	               //          selectedDate = date;
+                //          }else{
+                //          	selectedDate = DateUtil.format(date);
+                //          }
+                //         console.log(date);
+                //         Render.assemble('year', selectedDate);
+                //         Render.assemble('month', selectedDate);
+                //         Render.assemble('date', selectedDate);
+                //         Render.assemble('hour', selectedDate);
+                //         Render.assemble('minute', selectedDate);
+                //         var y = DateUtil.getValue('year');
+                //         var m = DateUtil.getValue('month');
+                //         var d = DateUtil.getValue('date');
+                //         var h = DateUtil.getValue('hour');
+                //         var mi = DateUtil.getValue('minute');
+                //         // global.selectedDate = {
+                //         //     year: y,
+                //         //     month: m,
+                //         //     date: d,
+                //         //     hour: h,
+                //         //     minute: mi
+                //         // }
+                //     },
+                //     vsetMaxDate: function (date) {
+                //         set.maxDate = date;
+                //         global.formatedMax = date;
+                //         if(global.selectedDate.year !=null)
+                //         {
+                //         }else{
+                //         	global.selectedDate = global.formatedMin;
+                //         }
+                //         // startDate.vsetMaxDate(endDate.vGetDate());
+                //         Render.assemble('year', global.selectedDate);
+                //         Render.assemble('month', global.selectedDate);
+                //         Render.assemble('date', global.selectedDate);
+                //         Render.assemble('hour', global.selectedDate);
+                //         Render.assemble('minute', global.selectedDate);
+                //     },
+                //     vsetMinDate: function (date) {
+                //         set.minDate = date;
+                //         global.formatedMin = date;
+                //         if(global.selectedDate.year!=null)
+                //         {
+                //         	// console.log(123);
+	               //          // global.selectedDate = 
+	               //          // {
+	               //          // 	year : global.formatedMin.year,
+	               //          // 	month: global.formatedMin.month,
+	               //          // 	date : null,
+	               //          // 	hour : null,
+	               //          // 	minute : null 
+	               //          // };
+	               //      }else
+	               //      {
+	               //      	console.log(122);
+	               //      	var prev = +new Date(global.formatedMin.year,global.formatedMin.month,global.formatedMin.date,global.formatedMin.hour,global.formatedMin.minute);
+	               //      	var now  = +new Date();	
+	               //      	if(prev > now)
+	               //      	{
+	               //      		global.selectedDate = global.formatedMin;
+	               //      		endDate.vSetDate(global.formatedMin);
+	               //      		startDate.vsetMaxDate(global.selectedDate);
+	               //      	}
+	               //      }
+                //         Render.assemble('year', global.selectedDate);
+                //         Render.assemble('month', global.selectedDate);
+                //         Render.assemble('date', global.selectedDate);
+                //         Render.assemble('hour', global.selectedDate);
+                //         Render.assemble('minute', global.selectedDate);
+                //     }
+                // }
+            }
+        });
+    })(jQuery);
+
+    var startDate = $.fn.datePicker({
+        yearContainerId: "start-year",
+        monthContainerId: "start-month",
+        dateContainerId: "start-date",
+        hourContainerId: "start-hour",
+        minuteContainerId: "start-minute",
+        preBtnContainerId: "start-pre-month",
+        nextBtnContainerId: "start-next-month",
+        inputValueId: "start-date-selected"
+    });
+
+
+    // var endDate = $.fn.datePicker({
+    //     yearContainerId: "end-year",
+    //     monthContainerId: "end-month",
+    //     dateContainerId: "end-date",
+    //     hourContainerId: "end-hour",
+    //     minuteContainerId: "end-minute",
+    //     preBtnContainerId: "end-pre-month",
+    //     nextBtnContainerId: "end-next-month",
+    //     inputValueId: "end-date-selected"
+    // });
+
+    // startDate.vSetDate("2012-11-28 18:30");	
+    // startDate.vsetMaxDate(endDate.vGetDate());
+    //    endDate.vsetMinDate(startDate.vGetDate());
+    // endDate.vSetDate("2013-2-18 18:13");	
+
+    // $("#start-date .date:not(.disabled)").live("click", function () {
+    //     endDate.vsetMinDate(startDate.vGetDate());
+    // });
+    // $("#start-hour").live("change",function(){
+    // 	endDate.vsetMinDate(startDate.vGetDate());
+    // });
+    // $("#end-date .date:not(.disabled)").live("click", function () {
+    //     startDate.vsetMaxDate(endDate.vGetDate());
+    // });
+    // $("#start-hour").live("change",function(){
+    // 	endDate.vsetMinDate(startDate.vGetDate());
+    // });
+    // $("#end-hour").live("change",function(){
+    // 	startDate.vsetMaxDate(endDate.vGetDate());
+    // });
+    // $(".schedule-sel-btn").click(function () {
+    //     $(this).nextAll(".schedule-date-range").toggle();
+    //     if($("#end-date-selected").attr("value") == "")
+    //     {
+    //     	// startDate.vsetMaxDate("0");
+    //     	// startDate.vSetDate($());
+    //     }else
+    //     {
+
+    //     }
+    // });
+    // $("#test").click(function(){
+    // 	$("#start-date-selected").change();
+    // });
+    // $("#start-date-selected").change(function(){
+    // 	var id = $(this).attr("data-id");
+    // 	if(id == "end"){
+    // 		$(".fn-end-datepicker").show();
+    // 		endDate.vSetDate($(this).val());
+    // 	}else
+    // 	{
+    // 		startDate.vSetDate($(this).val());
+    // 	}
+    // });
+    // $(".confirm-date-select .schedule-btn").click(function () {
+    //     $(".schedule-date-range").hide();
+    // });
+    // $("#fn-sel-today").click(function(){
+    // 	var today = new Date();
+    // 	today = today.getUTCFullYear() + "-" + (+today.getUTCMonth() + 1) + "-" + today.getUTCDate() + " " + today.getUTCHours() + ":" + today.getUTCMinutes();
+    // 	startDate.vSetDate(today);
+    // 	endDate.vsetMinDate(startDate.vGetDate());
+    // });
+
+
+		// ]]
+	</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+.pop-login
+{
+	margin-top: -237px;
+}
+.login-box
+{
+	padding: 10px 15px;
+}
+.login-box .f-name, .login-box .f-val
+{
+	float: left;
+	
+}
+.login-box .f-name
+{
+	line-height: 27px;
+	text-align: right;
+	text-transform: capitalize;
+}
+.login-box .or-with
+{
+	text-align: center;
+	font-size: 14px;
+	font-weight: 700;
+	clear: left;
+	/*padding-bottom: 15px;*/
+	text-transform: capitalize;
+	line-height: 27px;
+}
+.login-box .f-val .ui-sign-btn-facebook
+{
+	float: left;
+	margin-right: 10px;
+}
+.login-box .f-name
+{
+	width: 100px;
+	margin-right: 15px;
+}
+.login-box li
+{
+	width: 100%;
+	float: left;
+	margin-bottom: 25px;
+}
+.login-box .f-val .ui-input-text
+{
+	width: 316px;
+}
